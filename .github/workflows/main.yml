@@ -49,3 +49,4 @@ jobs:
           aws-region: us-east-1
       - name: Zappa deployments
         run: pipenv run zappa update --all
+
