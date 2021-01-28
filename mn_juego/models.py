@@ -1,6 +1,7 @@
 from django.db import models
 from ndarray import NDArrayField
 import numpy as np
+from autoslug import AutoSlugField
 from dj_proposals_candidates.models import Territory, Proposal, Candidate, Commitment
 
 
@@ -20,4 +21,8 @@ class Distrito(Territory):
 
 class Comuna(models.Model):
     name = models.CharField(max_length=255)
+    slug = AutoSlugField(populate_from='name')
     distrito = models.ForeignKey(Distrito, related_name='comunas', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name

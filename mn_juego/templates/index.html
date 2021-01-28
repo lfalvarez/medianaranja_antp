@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block extrajstop %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-4-autocomplete/dist/bootstrap-4-autocomplete.min.js" crossorigin="anonymous"></script>
+{% endblock extrajstop %}
+
+{% block content %}
+
+<h1>Selecciona tu comuna:</h1>
+
+
+<div class="container">
+  <div id="parent" class="form-group">
+    <label for="myAutocomplete">Bootstrap 4 Autocomplete</label>
+    <input type="text" id="myAutocomplete" class="form-control" />
+  </div>
+  <div id="output"></div>
+</div>
+<script>
+    var src = {
+      {% for comuna in object_list %}"{{comuna.name}}": "{{comuna.slug}}",{% endfor %}
+    }
+
+    function onSelectItem(item) {
+
+      let slug = item.value;
+      $(location).attr('href', slug)
+    }
+    $( document ).ready(function() {
+        $('#myAutocomplete').autocomplete({
+          source: src,
+          onSelectItem: onSelectItem,
+          highlightClass: 'text-danger',
+          treshold: 2,
+        });
+    });
+</script>
+{% endblock content %}
