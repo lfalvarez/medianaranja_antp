@@ -35,10 +35,6 @@ jobs:
         run: echo Hello, world!
 
       # Runs a set of commands using the runners shell
-      - name: Install pipenv and libpq
-        run: |
-          sudo apt-get install libpq-dev -y
-          pip install pipenv
       - name: Cache pipenv virtualenv
         id: cache-pipenv
         uses: actions/cache@v1
@@ -47,7 +43,7 @@ jobs:
           key: ${{ runner.os }}-pipenv-${{ hashFiles('**/Pipfile.lock') }}
       - name: Install dependencies
         if: steps.cache-pipenv.outputs.cache-hit != 'true'
-        run: pipenv install
+        run: pip install -r requirements.txt
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
