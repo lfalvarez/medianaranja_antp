@@ -7,8 +7,16 @@ on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ $default-branch ]
+    paths:
+        - domi/**
+        - Pipfile*
+        - zappa_settings.json
   pull_request:
     branches: [ $default-branch ]
+    paths:
+      - domi/**
+      - Pipfile*
+      - zappa_settings.json
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -43,6 +51,6 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-      - name: Zappa Deploy
-        uses: josephbmanley/zappa-deploy-action@v0.1.1
+      - name: Zappa deployments
+        run: pipenv run zappa update --all
 
