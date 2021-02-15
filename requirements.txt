@@ -9,7 +9,7 @@ python_graphql_client
 django-ndarray==0.0.3
 django-extensions
 django-autoslug
-
+zappa
 
 
 # Django
