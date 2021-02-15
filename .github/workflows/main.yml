@@ -9,7 +9,6 @@ on:
     branches: [ $default-branch ]
     paths:
         - domi/**
-        - Pipfile*
         - zappa_settings.json
   pull_request:
     branches: [ $default-branch ]
@@ -51,6 +50,6 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-      - name: Zappa deployments
-        run: pipenv run zappa update --all
+      - name: Zappa Deploy
+        uses: josephbmanley/zappa-deploy-action@v0.1.1
 
