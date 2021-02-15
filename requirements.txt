@@ -11,6 +11,7 @@ django-extensions
 django-autoslug
 
 
+
 # Django
 # ------------------------------------------------------------------------------
 django==3  # pyup: < 3.1  # https://www.djangoproject.com/
