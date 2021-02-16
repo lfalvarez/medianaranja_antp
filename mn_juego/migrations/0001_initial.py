@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
             name='Distrito',
             fields=[
                 ('territory_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='dj_proposals_candidates.Territory')),
-                ('matriz', models.BinaryField(blank=True, default=(('1', '0', '1'), ('1', '0', '1')), null=True)),
+                ('matriz', models.BinaryField(blank=True, default=None, null=True)),
             ],
             options={
                 'abstract': False,

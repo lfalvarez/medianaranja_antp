@@ -41,4 +41,5 @@ jobs:
         aws-region: sa-east-1
     - name: Zappa Deploy
       run: |
+        pipenv run zappa manage dev migrate
         pipenv run zappa update --all

@@ -1,5 +1,4 @@
 from django.db import models
-from ndarray import NDArrayField
 import numpy as np
 from autoslug import AutoSlugField
 from dj_proposals_candidates.models import Territory, Proposal, Candidate, Commitment
@@ -18,7 +17,7 @@ class Candidatura(Candidate):
     position_in_array = models.IntegerField(null=True, blank=True)
 
 class Distrito(Territory):
-    matriz = models.BinaryField(null=True, blank=True, default=np.vectorize(np.binary_repr)(np.array([[1, 0, 1], [1, 0, 1]]), width=1))
+    matriz = models.BinaryField(null=True, blank=True, default=None)
 
     def get_matrix(self):
         segunda_dimension = self.candidates.count()
