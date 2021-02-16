@@ -10,6 +10,7 @@ django-ndarray==0.0.3
 django-extensions
 django-autoslug
 zappa
+python-graphql-client
 
 
 # Django
