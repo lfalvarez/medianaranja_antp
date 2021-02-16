@@ -40,4 +40,6 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: sa-east-1
     - name: Zappa Deploy
-      run: pipenv run zappa update --all
+      run: |
+        pipenv run zappa manage dev migrate
+        pipenv run zappa update --all
