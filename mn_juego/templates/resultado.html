@@ -5,29 +5,8 @@
 <h1>{{distrito}}</h1>
 
 
-<div id="accordion">
-    {% for propuesta in distrito.proposals.all %}
-      <div class="card">
-        <div class="card-header" id="headingOne">
-          <h5 class="mb-0">
-            <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{propuesta.id}}" aria-expanded="true" aria-controls="collapse{{propuesta.id}}">
-              {{propuesta}}
-            </button>
-          </h5>
-        </div>
+{% include 'propuestas_con_candidatos_dentro.html' with distrito=distrito %}
 
-        <div id="collapse{{propuesta.id}}" class="collapse show" aria-labelledby="collapse{{propuesta.id}}" data-parent="#accordion">
-          <div class="card-body">
-            Las candidaturas comprometidas con esta propuesta son:
-              <ul>
-                  {% for commitment in propuesta.commitments.all %}
-                  <li>{{commitment.candidate}}</li>
-                  {% endfor %}
-              </ul>
-          </div>
-        </div>
-      </div>
-    {% endfor %}
-</div>
 
+{% include 'candidatos_con_porcentajes.html' with distrito=distrito %}
 {% endblock content %}

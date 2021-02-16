@@ -1,0 +1,22 @@
+{% load medianaranja_extras %}
+
+<div class="card border-light mb-3">
+    <div class="card-body">
+    Cuáles son los candidatos más comprometidos
+    </div>
+</div>
+
+<div class="container">
+<div class="card">
+    <ul class="list-group list-group-flush">
+    {% for candidate in distrito.get_sorted_candidates %}
+    <li class="list-group-item">
+            {{candidate}} - {{candidate | percentage |floatformat:"-2" }}%
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: {{candidate | percentage }}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+    </li>
+    {% endfor %}
+    </ul>
+</div>
+    </div>

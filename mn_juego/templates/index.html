@@ -7,16 +7,18 @@
 
 {% block content %}
 
-<h1>Selecciona tu comuna:</h1>
 
-
-<div class="container">
+<div class="jumbotron">
+  <h1 class="display-4">El Nombre</h1>
+  <hr class="my-4">
   <div id="parent" class="form-group">
     <label for="myAutocomplete">Escribe las primeras letras de tu comuna</label>
     <input type="text" id="myAutocomplete" class="form-control" />
   </div>
   <div id="output"></div>
 </div>
+
+
 <script>
     var src = {
       {% for comuna in object_list %}"{{comuna.name}}": "{{comuna.slug}}",{% endfor %}
