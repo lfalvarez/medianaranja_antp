@@ -27,7 +27,7 @@
     function onSelectItem(item) {
 
       let slug = item.value;
-      $(location).attr('href', slug)
+      $(location).attr('href', 'c/'+slug)
     }
     $( document ).ready(function() {
         $('#myAutocomplete').autocomplete({
