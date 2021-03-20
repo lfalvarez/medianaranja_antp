@@ -7,7 +7,9 @@ from dj_proposals_candidates.models import Territory, Proposal, Candidate, Commi
 def get_percentage(candidate):
     total = candidate.territory.proposals.count()
     commited = candidate.territory.proposals.filter(commitments__candidate=candidate).count()
-    return (commited / total) * 100
+    if total:
+        return (commited / total) * 100
+    return 0
 
 
 class Propuesta(Proposal):
@@ -15,9 +17,11 @@ class Propuesta(Proposal):
 
 class Candidatura(Candidate):
     position_in_array = models.IntegerField(null=True, blank=True)
+    importante_para_antp = models.BooleanField(default=False)
 
 class Distrito(Territory):
     matriz = models.BinaryField(null=True, blank=True, default=None)
+    region = models.ForeignKey(Territory, related_name='distritos', on_delete=models.CASCADE)
 
     def get_matrix(self):
         segunda_dimension = self.candidates.count()

@@ -1,16 +1,24 @@
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.views.generic.base import RedirectView
 from mn_juego.models import Comuna, Distrito
+from django.urls import reverse_lazy
 
 
 class IndexView(ListView):
     model = Comuna
     template_name = 'index.html'
 
-class DistritoView(DetailView):
+class DistritoView(RedirectView):
+    permanent = False
+
+    def get_redirect_url(self, *args, **kwargs):
+        comuna_being_asked = Comuna.objects.get(slug=self.kwargs['slug'])
+        distrito_slug = comuna_being_asked.distrito.slug
+        return reverse_lazy('mn_juego:distrito_detail_by_distrito_slug',
+                            kwargs={'slug': distrito_slug}
+                            )
+
+class DistritoBySlug(DetailView):
     model = Distrito
     template_name = 'resultado.html'
-
-    def get_object(self, queryset=None):
-        comuna_being_asked = Comuna.objects.get(slug=self.kwargs['slug'])
-        return comuna_being_asked.distrito
