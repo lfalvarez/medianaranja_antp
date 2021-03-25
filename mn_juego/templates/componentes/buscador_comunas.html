@@ -1,0 +1,21 @@
+<input type="text" id="myAutocomplete" class="form-control" />
+
+<script>
+    var src = {
+      {% for comuna in object_list %}"{{comuna.name}}": "{{comuna.slug}}",{% endfor %}
+    }
+
+    function onSelectItem(item) {
+
+      let slug = item.value;
+      $(location).attr('href', 'c/'+slug)
+    }
+    $( document ).ready(function() {
+        $('#myAutocomplete').autocomplete({
+          source: src,
+          onSelectItem: onSelectItem,
+          highlightClass: 'text-danger',
+          treshold: 2,
+        });
+    });
+</script>
