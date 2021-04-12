@@ -134,12 +134,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-S3_BUCKET = "zappa-static"
+BALDINHO = "antp-assets"
 
 STATICFILES_STORAGE = "django_s3_storage.storage.StaticS3Storage"
-AWS_S3_BUCKET_NAME_STATIC = S3_BUCKET
+AWS_S3_BUCKET_NAME_STATIC = BALDINHO
 
 # These next two lines will serve the static files directly
 # from the s3 bucket
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % S3_BUCKET
-STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+DOMINIO_PERSONALIZADO = '%s.s3.amazonaws.com' % BALDINHO
+STATIC_URL = "https://%s/" % DOMINIO_PERSONALIZADO
+AWS_DEFAULT_ACL = None
