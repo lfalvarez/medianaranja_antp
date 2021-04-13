@@ -7,7 +7,6 @@ hiredis==1.1.0  # https://github.com/redis/hiredis-py
 -e git://github.com/lfalvarez/proposals-core.git#egg=dj_proposals_candidates
 python_graphql_client
 django-ndarray==0.0.3
-django-extensions
 django-autoslug
 zappa
 python-graphql-client

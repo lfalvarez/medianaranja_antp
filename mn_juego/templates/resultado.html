@@ -1,12 +1,53 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
+
+<div class="banner-mapa-distrito">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53174.04800860228!2d-70.59680875596365!3d-33.595495467408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d652752a03c3%3A0x8f5de46ed2a22e92!2sPuente%20Alto%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1617581462137!5m2!1ses!2scl" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <div class="info">
+        <h1 class="distrito">Puente Alto, {{distrito}}</h1>
+        <p class="region">Región Metropolitana</p>
+    </div>
+</div>
+
+<div class="textura-post-banner">
+    <img src="../static/imagenes/textura-decoracion-postbanner.svg" alt="textura">
+</div>
+
+<section class="container compromisos">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 info-compromisos">
+            <h2><b>Compromisos #ParticipamosTodxs: </b><br>Por una participación ciudadana inclusiva</h2>
+            <p>Porque en este proceso constituyente <b>#ParticipamosTodxs</b>, les pedimos a las candidaturas que adhieran a los siguientes compromisos, para impulsar una participación ciudadana inclusiva durante el trabajo de la Convención Constitucional.</p>
+            <div class="compromiso pink">
+                <h3>Compromiso por la Participación:</h3>
+                <p>Compromiso por la inclusión de grupos con mayor vulneración de derechos. Trabajados desde Manual <a href="https://drive.google.com/file/d/1draruC0R7CZJLc6CWE0DZ_mcRul9As36/view" target="_blank">“Miradas para la inclusión”</a>.</p>
+                <a class="boton-antp" href="#">Revisa el compromiso</a>
+            </div>
+            <div class="compromiso blue">
+                <h3>Compromiso GEP:</h3>
+                <p>Compromiso por la participación en el proceso constituyente. Impulsado desde <a href="https://www.redparalaparticipacion.cl/" target="_blank">la Red para la Participación.</a></p>
+                <a class="boton-antp" href="#">Revisa el compromiso</a>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 datos-porcentajes">
+            <div class="item-porcentaje">
+                <h4>Participación electoral en el<span>Plebiscito 25-O</span></h4>
+                <p class="porcentaje">42.78%</p>
+            </div>
+            <!-- <div class="item-porcentaje">
+                <h4>Participación <span>Nivel Comunal</span> en la última elección</h4>
+                <p class="porcentaje">42.78%</p>
+            </div>-->
+            <div class="item-porcentaje boton-locales-votacion">
+                <a class="boton-antp" href="#"><img src="../static/imagenes/map-icono-white.svg" alt="mapa-icono" class="icono-mapa" width="25px;">Local de votación</a>
+            </div>
+        </div>
+    </div>
+</section>
 
 
-{% block content %}
-<h1>{{distrito}}</h1>
 
 
-{% include 'propuestas_con_candidatos_dentro.html' with distrito=distrito %}
+<!--{% include 'propuestas_con_candidatos_dentro.html' with distrito=distrito %} -->
 
-
-{% include 'candidatos_con_porcentajes.html' with distrito=distrito %}
-{% endblock content %}
+{% include 'candidatos_con_porcentajes.html' with distrito=distrito %} {% endblock content %}
