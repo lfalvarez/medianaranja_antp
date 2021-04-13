@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'dj_proposals_candidates',
+    'django_s3_storage',
     'mn_juego',
 ]
 
@@ -133,7 +134,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/dev/static/'
-STATIC_ROOT = str(BASE_DIR / 'staticfiles')
-WHITENOISE_STATIC_PREFIX = '/static/'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+BALDINHO = "antp-assets"
+
+STATICFILES_STORAGE = "django_s3_storage.storage.StaticS3Storage"
+AWS_S3_BUCKET_NAME_STATIC = BALDINHO
+
+# These next two lines will serve the static files directly
+# from the s3 bucket
+DOMINIO_PERSONALIZADO = '%s.s3.amazonaws.com' % BALDINHO
+STATIC_URL = "https://%s/" % DOMINIO_PERSONALIZADO
+AWS_DEFAULT_ACL = None
