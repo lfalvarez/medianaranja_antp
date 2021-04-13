@@ -25,7 +25,7 @@ IS_OFFLINE = os.environ.get('LAMBDA_TASK_ROOT') is None
 SECRET_KEY = '(%oxpv3#3wg^z3@+-8t7s)@gp7ro0)-x*)^vq^5((l_n_5c_ui'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = IS_OFFLINE
+DEBUG = True
 
 ALLOWED_HOSTS = ['k8936tfdt5.execute-api.sa-east-1.amazonaws.com', 'localhost', 'zappa', 'mn.felipe.al']
 
