@@ -42,5 +42,3 @@ jobs:
     - name: Zappa Deploy
       run: |
         pipenv run zappa update --all
-        pipenv run zappa manage dev "collectstatic --noinput"
-        
