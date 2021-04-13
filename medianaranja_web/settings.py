@@ -136,7 +136,11 @@ USE_TZ = True
 
 BALDINHO = "antp-assets"
 
-STATICFILES_STORAGE = "django_s3_storage.storage.StaticS3Storage"
+# STATICFILES_STORAGE = "django_s3_storage.storage.StaticS3Storage"
+
+if not IS_OFFLINE:
+    STATICFILES_STORAGE = "django_s3_storage.storage.StaticS3Storage"
+
 AWS_S3_BUCKET_NAME_STATIC = BALDINHO
 
 # These next two lines will serve the static files directly
