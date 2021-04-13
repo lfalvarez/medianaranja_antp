@@ -1,27 +1,43 @@
-<header>
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Inicio</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">1/2 Naranja</a>
-          </li>
+ {% load static %}
 
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Distritos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Candidaturas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Propuestas</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="nav-form container my-2">
+            <a class="navbar-brand" href="#"><img src="{% static 'imagenes/logo-antp.png' %}" alt="My image"></a>
+            <ul class="navbar-nav">
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+                </form>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Registrate</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Entrar</a>
+                </li>
+            </ul>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+        </div>
+        <div class="collapse navbar-collapse v-desktop" id="navbarNavDropdown">
+            <ul class="navbar-nav container">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">¿Cómo participar?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Territorios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Noticias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sobre el proyecto</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 </header>

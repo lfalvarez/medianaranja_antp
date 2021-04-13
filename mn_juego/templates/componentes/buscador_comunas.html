@@ -1,7 +1,7 @@
 <input type="text" id="myAutocomplete" class="form-control" />
 
 <script>
-    var src = {
+        var src = {
       {% for comuna in object_list %}"{{comuna.name}}": "{{comuna.slug}}",{% endfor %}
     }
 
