@@ -31,7 +31,7 @@
 
           <div id="parent" class="form-group">
                <label for="myAutocomplete">Selecciona <b>la comuna</b> en que votas:</label>
-               <img src="../static/imagenes/map-icono.svg" alt="mapa-icono" class="icono-mapa"> {% include 'componentes/buscador_comunas.html' with object_list=object_list %}
+               <img src="{% static 'imagenes/map-icono.svg" alt="mapa-icono' %}" class="icono-mapa"> {% include 'componentes/buscador_comunas.html' with object_list=object_list %}
 
                 <a class="boton-antp" type="submit">Revisar Comuna</a>
             </div>
