@@ -554,23 +554,13 @@
             </div>
 
             <div class="col-12 col-sm-12 col-md-7 col-lg-6 col-xl-6 comunas">
-                <div class="comuna-activa">
-                    <h3>Puente Alto</h3>
-                </div>
                 <div class="comunas-distrito-list">
                     <ul>
+                        {% for comuna in distrito.comunas.all %}
                         <li>
-                            <p>La Florida</p>
+                            <p>{{comuna}}</p>
                         </li>
-                        <li>
-                            <p>La Pintana</p>
-                        </li>
-                        <li>
-                            <p>Pirque</p>
-                        </li>
-                        <li>
-                            <p>San José de Maipo</p>
-                        </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
