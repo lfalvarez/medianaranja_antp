@@ -36,7 +36,6 @@ class Command(BaseCommand):
         distrito, d_created = PuebloOriginario.objects.get_or_create(name=pueblo, remote_id=2)
         distrito.regiones.add(region)
         candidate, c_created = Candidatura.objects.get_or_create(name=candidate_name, territory=distrito)
-        print(candidate)
 
     def get_things(self, line):
         pueblo = line[1]

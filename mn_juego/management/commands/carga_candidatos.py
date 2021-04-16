@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from mn_juego.models import Distrito, Comuna, Territory, Candidatura
+from mn_juego.models import Distrito, Comuna, Territory, Candidatura, Lista, Partido
 import csv
 import re
 
@@ -31,9 +31,18 @@ class Command(BaseCommand):
         elements = self.get_things(line)
         if not elements:
             return
-        (distrito_name, candidate_name, lista, partido, mail) = elements
+        (distrito_name, candidate_name, lista_name, partido_name, mail) = elements
+        if lista_name and partido_name:
+            lista, l_created = Lista.objects.get_or_create(name=lista_name)
+            partido, p_created = Partido.objects.get_or_create(name=partido_name, lista=lista)
+        else:
+            partido = None
         distrito = Distrito.objects.get(name=distrito_name)
-        candidate, c_created = Candidatura.objects.get_or_create(name=candidate_name, territory=distrito)
+        candidate, c_created = Candidatura.objects.get_or_create(name=candidate_name,
+                                                                 territory=distrito)
+        if partido:
+            candidate.partido = partido
+            candidate.save()
 
     def get_things(self, line):
         try:

@@ -1,0 +1,60 @@
+{% load medianaranja_extras %}
+{% load static %}
+<!--Candidato Card -->
+<div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 candidatos">
+    <div class="card-candidato" data-toggle="modal" data-target="#perfil-candidato-1">
+        {% if candidatura.candidatura.partido %}
+        <p>{{candidatura.candidatura.partido}}</p>
+        {% endif %}
+        <h5>{{candidatura}}</h5>
+        <div class="compromisos-adheridos">
+            {% get_compromiso_participacion candidatura as compromiso_participacion %}
+            {% if compromiso_participacion %}
+            <p class="pink">Compromiso por la participación</p>
+            {% endif %}
+            {% get_compromiso_gep candidatura as compromiso_gep %}
+            {% if compromiso_gep %}
+            <p class="blue">Compromiso GEP</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="perfil-candidato-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+                </div>
+                <div class="modal-body">
+                    <h3>{{candidatura}}</h3>
+                    <ul>
+                        <li>
+                            {% if candidatura.candidatura.partido %}
+                            <p><b>Lista:</b> {{candidatura.candidatura.partido.lista}}.</p>
+                            {% endif %}
+                        </li>
+                        <li>
+                            {% if candidatura.candidatura.partido %}
+                            <p><b>Partido Político:</b> {{candidatura.candidatura.partido}}</p>
+                            {% endif %}
+                        </li>
+                    </ul>
+
+                    <div class="rrss-candidato">
+                        <ul class="redes-sociales">
+                            <li><a href="#"><img src="{% static 'imagenes/twitter-icono-rosa.svg' %}" alt="icono twitter"></a></li>
+                            <li><a href="#"><img src="{% static 'imagenes/fb-icono-rosa.svg' %}" alt="icono facebook"></a></li>
+                            <li><a href="#"><img src="{% static 'imagenes/insta-icono-rosa.svg' %}" alt="icono instagram"></a></li>
+                        </ul>
+                    </div>
+                    <div class="sitioweb">
+                        <a href="#" class="boton-antp" type="submit">Sitio Web Candidato</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
