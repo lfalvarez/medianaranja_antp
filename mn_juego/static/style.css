@@ -220,6 +220,7 @@ header nav .v-desktop ul li a.active {
 .portada {
     background-image: url(imagenes/bg-portada-home.jpg);
     background-attachment: fixed;
+    background-size: cover;
     height: 768px;
     width: 100%;
     position: relative;
@@ -232,7 +233,7 @@ header nav .v-desktop ul li a.active {
     text-align: center;
     width: 100%;
     padding: 0 15%;
-    font-size: 4.3em;
+    font-size: 4.1em;
     text-transform: uppercase;
     line-height: normal;
     font-weight: bold;
@@ -245,6 +246,50 @@ header nav .v-desktop ul li a.active {
     padding-bottom: 10px;*/
 }
 
+
+.portada .boton-acla {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.portada .boton-acla p {
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    font-size: 0.9em;
+    padding-bottom: 0px;
+    margin-bottom: 5px;
+}
+
+.portada .boton-acla a {
+    border: 3px solid white;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    border-radius: 100%;
+    transition: 0.5s all;
+    zoom: 0.9;
+}
+
+.portada .boton-acla a:hover {
+    background: white;
+}
+
+.portada .boton-acla a img {
+    width: 25px;
+    height: auto;
+}
 
 /*HOME -  Busqueda por Comuna*/
 
@@ -273,8 +318,6 @@ a.boton-antp:hover {
     position: relative;
     top: 80px;
 }
-
-
 
 .textura-post-busqueda-comuna img {
     position: relative;
@@ -389,8 +432,8 @@ a.boton-antp:hover {
 
 .busqueda-comuna .mancha {
     position: absolute;
-    top: -250px;
-    right: -11%;
+    top: -140px;
+    right: 0%;
 }
 
 /*Busqueda Pueblo Originario - Home*/
@@ -509,6 +552,7 @@ footer nav.nav-footer ul li a {
     color: white;
     font-weight: bold;
     transition: 0.4s all;
+    text-align: center;
 }
 
 footer nav.nav-footer ul li a:hover {
@@ -582,11 +626,30 @@ footer .rrss {
 
 .footer-creditos img {
     width: auto !important;
-    max-width: 150px;
+    max-width: 100px;
+    opacity: 0.75;
+    transition: 0.4s all;
+}
+
+.footer-creditos img:hover {
+    opacity: 1;
 }
 
 
+.footer-creditos a {
+    text-decoration: none;
+}
+
 /*Resultado Busqueda Distrito*/
+
+.banner-mapa-distrito {
+    background: url(imagenes/mapa-textura.svg);
+    background-size: cover;
+    background-position: center;
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+
 
 .banner-mapa-distrito {
     margin-top: 176px;
@@ -749,7 +812,7 @@ section.container.compromisos {
 
 .datos-porcentajes .item-porcentaje h4 {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: 900;
     color: black;
     text-align: center;
@@ -866,6 +929,25 @@ section.container.compromisos {
     color: #2B64E2;
 }
 
+.candidatos .card-candidato .compromisos-adheridos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    flex-direction: row;
+}
+
+.candidatos .card-candidato .compromisos-adheridos img {
+    width: 30px;
+    margin: 10px 10px;
+}
+
+
+.candidatos-pueblos-contenedor .compromisos-adheridos img {
+    width: 30px;
+    margin: 10px 10px;
+}
+
 /*Paginación candidatos*/
 
 .pagination {
@@ -926,7 +1008,8 @@ section.container.compromisos {
 .candidatos-pueblos-contenedor {
     background: url(imagenes/bg-blue-granillo.jpg);
     background-size: cover;
-    padding: 160px 0px;
+    padding-top: 140px;
+    padding-bottom: 140px;
 }
 
 
@@ -1401,8 +1484,8 @@ section.container.compromisos {
 .pueblos-originarios-lista .personas {
     position: absolute;
     bottom: 0px;
-    left: -18%;
-    width: 58%;
+    left: 0%;
+    width: 45%;
     z-index: -1;
 }
 
@@ -1413,15 +1496,15 @@ section.container.compromisos {
 
 .pueblos-originarios-lista .mancha-prev-footer {
     position: absolute;
-    right: -18%;
+    right: 0%;
     bottom: 0px;
-    width: 40%;
+    width: 30%;
     z-index: -1;
 }
 
 .pueblos-originarios-lista .textura-granillo {
     position: absolute;
-    right: -18%;
+    right: 0%;
     top: -150px;
     width: 35%;
     z-index: -1;
@@ -1446,11 +1529,121 @@ section.container.compromisos {
     margin-bottom: 5px;
 }
 
+.footer-creditos p {
+    line-height: 18px;
+}
+
+.footer-creditos .fci-creditos p {
+    text-align: right;
+}
+
+
+/*MOVIL HASTA 1180 PX*/
+
+@media (max-width:1180px) {
+    .textura-prev-pueblos {
+        bottom: -60px;
+    }
+    .textura-post-pueblos {
+        bottom: 60px;
+    }
+    .textura-post-busqueda-comuna img {
+        bottom: 50px;
+    }
+    .contenedor-candidatos:before {
+        left: -30%;
+    }
+    .pueblos-originarios-lista h2 {
+        font-size: 2.8em;
+        line-height: normal;
+    }
+    .candidatos h2 {
+        font-size: 2.8em;
+        line-height: normal;
+    }
+    .candidatos-pueblos-contenedor h2 {
+        font-size: 2.8em;
+        line-height: normal;
+    }
+    .comunas-distrito h2 {
+        font-size: 2.8em;
+        line-height: normal;
+    }
+}
+
+
+
+
+/*MOVIL HASTA 992 PX*/
+
+@media (max-width:992px) {
+    .nav-form .navbar-nav {
+        flex-direction: row;
+    }
+    .navbar-light .navbar-toggler {
+        color: white;
+        border-color: transparent;
+    }
+
+    .navbar-light .navbar-toggler-icon {
+        filter: invert(1);
+    }
+
+    header li.nav-item {
+        width: 100%;
+        padding: 0px !important;
+        margin: 0px !important;
+    }
+    .navbar-collapse ul.navbar-nav.container {
+        width: 100%;
+        max-width: 100%;
+        padding-right: 0px;
+    }
+    .banner-mapa-distrito {
+        margin-top: 118px;
+    }
+    .textura-post-banner {
+        bottom: 55px;
+    }
+    .textura-post-pueblos {
+        bottom: 50px;
+    }
+    .textura-prev-pueblos {
+        bottom: -60px;
+    }
+    .footer-creditos div > div > div {
+        margin-bottom: 20px;
+    }
+    footer .logo img {
+        width: 140px;
+    }
+    .contenedor-candidatos:before {
+        left: -25%;
+    }
+    .pueblos-originarios-lista h2 {
+        font-size: 2.4em;
+    }
+    .candidatos h2 {
+        font-size: 2.4em;
+    }
+    .candidatos-pueblos-contenedor h2 {
+        font-size: 2.4em;
+    }
+    .comunas-distrito h2 {
+        font-size: 2.8em;
+    }
+    .comunas-distrito .comunas-distrito-list {
+        padding-left: 20px;
+    }
+}
+
 
 
 /*MOVIL HASTA 768 PX*/
 
 @media (max-width:768px) {
+
+    /*HEADER*/
     header .nav-form {
         padding: 10px 25px !important;
     }
@@ -1466,6 +1659,306 @@ section.container.compromisos {
     header ul.navbar-nav.container {
         margin-right: 0px !important;
         padding-right: 0px;
+    }
+    header nav .nav-form img {
+        width: 80px;
+        margin-left: 10px;
+    }
+
+    /*HOME - PORTADA*/
+    .portada {
+        min-height: 500px;
+        height: auto;
+        max-height: 700px;
+        margin-bottom: 30px;
+    }
+    .portada h2.titulo-portada {
+        top: 45%;
+        padding: 0 30px;
+        font-size: 2.2em;
+    }
+
+    /*HOME - BUSQUEDA COMUNA*/
+    .textura-post-menu-home img {
+        top: 35px;
+    }
+    .busqueda-comuna .mancha {
+        top: -140px;
+        right: -10%;
+        zoom: 0.8;
+    }
+    .busqueda-comuna .form-comunas:before {
+        content: none;
+    }
+    .busqueda-comuna h1 {
+        font-size: 2.5em;
+    }
+    .busqueda-comuna {
+        padding-top: 130px !important;
+        padding-bottom: 80px;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    .busqueda-comuna .form-control {
+        width: 100%;
+    }
+
+    .textura-post-busqueda-comuna img {
+        bottom: 20px;
+    }
+    .busqueda-comuna .personas {
+        bottom: -80px;
+        width: 100%;
+        left: 10%;
+    }
+    .busqueda-comuna p.bajada-titulo {
+        font-size: 1.3em;
+        margin-bottom: 40px;
+    }
+
+    /*HOME - BUSQUEDA PUEBLOS ORIGINARIOS*/
+    .mancha-prev-footer {
+        bottom: -100px;
+        width: 70%;
+    }
+
+    .busqueda-pueblo-originario {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    .busqueda-pueblo-originario .mancha {
+        top: -70px;
+        zoom: 0.8;
+        z-index: -1;
+    }
+    .busqueda-pueblo-originario h2 {
+        font-size: 1.6em;
+    }
+
+    .busqueda-pueblo-originario .personas {
+        width: 100%;
+        bottom: -100px;
+    }
+
+    .busqueda-pueblo-originario .form-control {
+
+        width: 100%;
+    }
+    .comunas-distrito .comunas-distrito-list {
+        padding-left: 0px;
+    }
+
+    /*FOOTER*/
+    footer .logo img {
+        width: 150px;
+        display: flex;
+        margin: 0 auto;
+        align-self: center;
+        margin-bottom: 50px;
+    }
+    ul.redes-sociales {
+        margin-top: 50px;
+    }
+
+    /*CREDITOS FOOTER*/
+    .footer-creditos {
+        padding-top: 50px;
+    }
+    .footer-creditos div div div {
+        margin-bottom: 35px;
+        padding: 0px;
+    }
+    .footer-creditos p {
+        font-size: 0.8em;
+    }
+
+    /*RESULTADO BUSQUEDA COMUNA*/
+    .banner-mapa-distrito {
+        margin-top: 112px;
+        width: 100%;
+        position: relative;
+    }
+    .textura-post-banner {
+        position: relative;
+        bottom: 30px;
+        overflow: hidden;
+    }
+    .banner-mapa-distrito .info {
+        top: 30%;
+    }
+    section.container.compromisos {
+        margin-top: 70px;
+    }
+    .container {
+        width: 90%;
+        max-width: 90%;
+        min-width: 90%;
+    }
+    nav .container {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+    }
+    .banner-mapa-distrito .info h1 {
+        font-size: 2em;
+    }
+    .banner-mapa-distrito .info p {
+        font-size: 0.95em;
+    }
+    .banner-mapa-distrito .info:before {
+        top: 9px;
+    }
+    .compromisos h2 {
+        font-size: 1.8em;
+        line-height: normal;
+    }
+    .datos-porcentajes .item-porcentaje {
+        padding: 30px 20px;
+        margin-left: 0%;
+    }
+    .datos-porcentajes .item-porcentaje:first-child {
+        margin-top: 70px;
+    }
+    .candidatos,
+    .candidatos-pueblos {
+        margin: auto;
+    }
+    .compromisos .compromiso h3 {
+        font-size: 1.5em;
+    }
+    .compromisos .compromiso.pink h3:before {
+        zoom: 0.2;
+    }
+    .compromisos .compromiso.blue h3:before {
+        zoom: 0.2;
+    }
+    .compromisos p {
+        font-size: 1.1em;
+        line-height: 20px;
+    }
+    .candidatos h2 {
+        font-size: 2.3em;
+        margin-bottom: 60px;
+        line-height: normal;
+    }
+    .textura-prev-pueblos {
+        position: relative;
+        bottom: -100px;
+        transform: rotate( 180deg);
+        width: 101%;
+        left: -2px;
+    }
+    .textura-prev-pueblos {
+        bottom: -25px;
+    }
+    .candidatos-pueblos-contenedor h2 {
+        font-size: 2em;
+        margin-bottom: 60px;
+    }
+    .textura-post-pueblos {
+        bottom: 25px;
+    }
+    .pagination {
+        zoom: 0.9;
+    }
+    .candidatos-pueblos-contenedor {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    .candidatos-pueblos-contenedor h2 br {
+        display: none;
+    }
+    .candidatos-pueblos-contenedor .card-candidato p {
+        margin-bottom: 5px;
+        padding: 0px;
+    }
+    .candidatos-pueblos-contenedor .card-candidato .pueblo-origen {
+        margin-top: 5px;
+    }
+    .comunas-distrito h2 {
+        font-size: 2em;
+        margin-bottom: 40px;
+        margin-top: 20px;
+    }
+    .comunas-distrito .comuna-activa {
+        width: 100%;
+    }
+    .comunas-distrito .comunas-distrito-list {
+        width: 100%;
+    }
+    .comunas-distrito .comunas {
+        flex-wrap: wrap;
+    }
+    .comunas-distrito .comunas-distrito-list {
+        width: 100%;
+        text-align: center;
+    }
+    .mancha-prev-footer-distritos {
+        width: 80%;
+        z-index: -1;
+    }
+
+    /*RESULTADO BUSQUEDA PUEBLO ORIGINARIO*/
+    .banner-pueblos-originarios .info {
+        left: 24%;
+    }
+    .pueblos-originarios-lista .mancha-prev-footer {
+        right: -6%;
+        width: 70%;
+    }
+    .pueblos-originarios-lista .personas {
+        width: 100%;
+        left: -20px;
+    }
+
+    .contenedor-candidatos:before {
+        content: none;
+    }
+    .pueblos-originarios-lista h2 {
+        font-size: 2em;
+        text-align: center;
+        line-height: normal;
+    }
+
+    .pueblos-originarios-lista .textura-granillo {
+        right: 5%;
+        top: -50px;
+        width: 65%;
+    }
+    .portada .boton-acla a {
+        zoom: 0.8;
+    }
+
+    .banner-mapa-distrito,
+    .banner-pueblos-originarios {
+        padding-bottom: 90px;
+    }
+    .banner-mapa-distrito .info,
+    .banner-pueblos-originarios .info {
+        padding-right: 20px;
+    }
+
+}
+
+
+/*MOVIL HASTA 768 PX*/
+
+@media (max-width:375px) {
+    .textura-post-banner {
+        bottom: 20px;
+    }
+    .portada .boton-acla a {
+        zoom: 0.7;
+    }
+    .portada h2.titulo-portada {
+        top: 40%;
+        font-size: 1.8em;
+    }
+    .banner-mapa-distrito,
+    .banner-pueblos-originarios {
+        padding-bottom: 80px;
     }
 
 }
