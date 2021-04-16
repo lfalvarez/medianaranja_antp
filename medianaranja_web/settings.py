@@ -92,7 +92,7 @@ else:
     DATABASES = {
         "default": {
             "ENGINE": "django_s3_sqlite",
-            "NAME": "db.sqlite3",
+            "NAME": "sqlite.db",
             "BUCKET": "medianaranja-antp",
         }
     }
