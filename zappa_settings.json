@@ -6,10 +6,6 @@
         "s3_bucket": "medianaranja-antp",
         "aws_region": "sa-east-1",
         "use_precompiled_packages": false,
-        "exclude": ["*.gz", "*.rar", "./mn_juego/static/"],
-        "events": [{
-             "function": "load_from_api.get_from_api",
-             "expressions": ["cron(0 10 * * ? *)"]
-         }]
+        "exclude": ["*.gz", "*.rar", "./mn_juego/static/"]
     }
 }
