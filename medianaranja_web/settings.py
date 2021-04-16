@@ -39,11 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_extensions',
     'dj_proposals_candidates',
     'django_s3_storage',
     'mn_juego',
 ]
+if IS_OFFLINE:
+    INSTALLED_APPS += ['django_extensions']
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
