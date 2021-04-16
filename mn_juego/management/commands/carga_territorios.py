@@ -13,6 +13,10 @@ def get_number_from_string(string):
 class Command(BaseCommand):
     help = 'carga distritos y comunas'
 
+    def __init__(self):
+        super()
+        self.pais, created = Territory.objects.get_or_create(name="Chile", remote_id=1, is_country=True)
+
     def add_arguments(self, parser):
         parser.add_argument('filename', nargs=1, type=str)
 

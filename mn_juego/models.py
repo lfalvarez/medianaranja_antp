@@ -1,5 +1,4 @@
 from django.db import models
-import numpy as np
 from autoslug import AutoSlugField
 from dj_proposals_candidates.models import Territory, Proposal, Candidate, Commitment
 
@@ -19,17 +18,18 @@ class Candidatura(Candidate):
     position_in_array = models.IntegerField(null=True, blank=True)
     importante_para_antp = models.BooleanField(default=False)
 
-class Distrito(Territory):
-    matriz = models.BinaryField(null=True, blank=True, default=None)
-    region = models.ForeignKey(Territory, related_name='distritos', on_delete=models.CASCADE)
-
-    def get_matrix(self):
-        segunda_dimension = self.candidates.count()
-        matrix = np.frombuffer(self.matriz, dtype='<U1').reshape((-1, segunda_dimension)).astype('int_')
-        return matrix
-
+class GetSortedCandidatesMixin():
     def get_sorted_candidates(self):
         return sorted(self.candidates.all(), key=get_percentage, reverse=True)
+
+class Distrito(Territory, GetSortedCandidatesMixin):
+    region = models.ForeignKey(Territory, related_name='distritos', on_delete=models.CASCADE)
+
+
+class PuebloOriginario(Territory, GetSortedCandidatesMixin):
+    regiones = models.ManyToManyField(Territory,
+                                      related_name='pueblos_originarios')
+
 
 class Comuna(models.Model):
     name = models.CharField(max_length=255)

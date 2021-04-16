@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from mn_juego.models import Distrito, Comuna, Territory, Candidatura
+from mn_juego.models import Distrito, Comuna, Territory, Candidatura, PuebloOriginario
 import csv
 import re
 
@@ -10,7 +10,7 @@ def get_number_from_string(string):
     return match.group('number')
 
 class Command(BaseCommand):
-    help = 'carga candidaturas a distritos'
+    help = 'carga candidaturas de pueblos originarios'
 
     def add_arguments(self, parser):
         parser.add_argument('filename', nargs=1, type=str)
@@ -31,19 +31,16 @@ class Command(BaseCommand):
         elements = self.get_things(line)
         if not elements:
             return
-        (distrito_name, candidate_name, lista, partido, mail) = elements
-        distrito = Distrito.objects.get(name=distrito_name)
+        (pueblo, candidate_name, region, mail) = elements
+        region = Territory.objects.get(name=region)
+        distrito, d_created = PuebloOriginario.objects.get_or_create(name=pueblo, remote_id=2)
+        distrito.regiones.add(region)
         candidate, c_created = Candidatura.objects.get_or_create(name=candidate_name, territory=distrito)
+        print(candidate)
 
     def get_things(self, line):
-        try:
-            distrito_name = get_number_from_string(line[1])
-        except Exception as e:
-            print(e, line)
-            return
-        distrito_name = 'Distrito {numero}'.format(numero=distrito_name)
-        candidate_name = line[2]
-        lista = line[3]
-        partido = line[4]
-        mail = line[5]
-        return (distrito_name, candidate_name, lista, partido, mail)
+        pueblo = line[1]
+        candidate_name = line[0]
+        region = line[2]
+        mail = line[3]
+        return (pueblo, candidate_name, region, mail)
