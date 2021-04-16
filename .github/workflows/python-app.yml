@@ -41,5 +41,7 @@ jobs:
         aws-region: sa-east-1
     - name: Zappa Deploy
       run: |
+        echo 'deployando'
+        ls -alth
         pipenv run zappa update --all
         pipenv run zappa manage dev "collectstatic --noinput"
