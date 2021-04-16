@@ -87,7 +87,7 @@ if IS_OFFLINE:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': str(BASE_DIR / "db.sqlite3"),
+            'NAME': str(BASE_DIR / "sqlite.db"),
         }
     }
 else:

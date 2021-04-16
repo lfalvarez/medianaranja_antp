@@ -140,3 +140,7 @@ cython_debug
 .DS_Store
 .idea
 db.sqlite3
+sqlite.db
+*.sql
+
+*.csv
