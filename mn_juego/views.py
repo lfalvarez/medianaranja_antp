@@ -22,3 +22,16 @@ class DistritoView(RedirectView):
 class DistritoBySlug(DetailView):
     model = Distrito
     template_name = 'resultado.html'
+
+class ComunaView(DetailView):
+    model = Distrito
+    template_name = 'resultado.html'
+
+    def get_object(self, queryset=None):
+        self.comuna_being_asked = Comuna.objects.get(slug=self.kwargs['slug'])
+        return self.comuna_being_asked.distrito
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+        context['comuna'] = self.comuna_being_asked
+        return context
