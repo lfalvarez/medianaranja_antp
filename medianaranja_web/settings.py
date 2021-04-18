@@ -150,3 +150,9 @@ AWS_S3_BUCKET_NAME_STATIC = BALDINHO
 DOMINIO_PERSONALIZADO = '%s.s3.amazonaws.com' % BALDINHO
 STATIC_URL = "https://%s/" % DOMINIO_PERSONALIZADO
 AWS_DEFAULT_ACL = None
+
+
+# Ids de cosas para hacerle_referencia
+GEP_PROPOSAL_REMOTE_ID = 7  # El id que tiene la propuesta GEP en decidim
+PARTICIPACION_PROPOSAL_REMOTE_ID = 8  # el id que tiene la propuesta por la participacion en decidim
+COUNTRY_ID = 1  # el id de chile, territorio al cual estaran asociadas las propuestas de arriba

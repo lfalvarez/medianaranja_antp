@@ -2,6 +2,7 @@ from django.db import models
 from autoslug import AutoSlugField
 from dj_proposals_candidates.models import Territory, Proposal, Candidate, Commitment
 import random
+from django.conf import settings
 
 
 def get_percentage(candidate):
@@ -40,14 +41,16 @@ class Candidatura(Candidate):
                                 related_name='candidaturas',
                                 on_delete=models.CASCADE,
                                 null=True)
+    facebook = models.URLField(default=None, null=True, blank=True)
+    instagram = models.URLField(default=None, null=True, blank=True)
 
     def get_compromiso_participacion(self):
-        random_bit = random.getrandbits(1)
-        return bool(random_bit)
+        participacion_remote_id = settings.PARTICIPACION_PROPOSAL_REMOTE_ID
+        return self.commitments.filter(proposal__remote_id=participacion_remote_id).exists()
 
     def get_compromiso_gep(self):
-        random_bit = random.getrandbits(1)
-        return bool(random_bit)
+        gep_proposal_remote_id = settings.GEP_PROPOSAL_REMOTE_ID
+        return self.commitments.filter(proposal__remote_id=gep_proposal_remote_id).exists()
 
 class GetSortedCandidatesMixin():
     def get_sorted_candidates(self):
