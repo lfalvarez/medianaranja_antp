@@ -17,6 +17,20 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
+    <!-- DESPLAZAMIENTO CON SCROLL -->
+    <script src="{% static 'js/smooth-scroll.min.js' %}"></script>
+    <script>
+        smoothScroll.init({
+            selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
+            selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
+            speed: 1500, // Integer. How fast to complete the scroll in milliseconds
+            easing: 'easeInOutCubic', // Easing pattern to use
+            offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
+            callback: function(anchor, toggle) {} // Function to run after scrolling
+        });
+
+    </script>
+
 
 
     {% block extrajstop %} {% endblock extrajstop %}
@@ -25,7 +39,7 @@
 
 <body>
     {% include 'componentes/header.html' %} {% block preContent %} {% endblock preContent %}
-    
+
     <div class="page">
         {% block content %} {% endblock content %}
     </div>
