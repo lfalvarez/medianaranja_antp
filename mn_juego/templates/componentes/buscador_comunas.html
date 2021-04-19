@@ -5,7 +5,7 @@
       {% for comuna in object_list %}"{{comuna.name}}": "{{comuna.slug}}",{% endfor %}
     }
 
-    function onSelectItem(item) {
+    function onSelectItem_{{input_id}}(item) {
 
       let slug = item.value;
       $(location).attr('href', 'comuna/'+slug + "{{post_fix}}")
@@ -13,7 +13,7 @@
     $( document ).ready(function() {
         $('#{{input_id}}').autocomplete({
           source: src_{{input_id}},
-          onSelectItem: onSelectItem,
+          onSelectItem: onSelectItem_{{input_id}},
           highlightClass: 'text-danger',
           treshold: 2,
         });

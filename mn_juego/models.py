@@ -6,7 +6,8 @@ from django.conf import settings
 
 
 def get_percentage(candidate):
-    total = candidate.territory.proposals.count()
+    total = 2
+    total += candidate.territory.proposals.count()
     commited = candidate.territory.proposals.filter(commitments__candidate=candidate).count()
     if total:
         return (commited / total) * 100
@@ -45,12 +46,16 @@ class Candidatura(Candidate):
     instagram = models.URLField(default=None, null=True, blank=True)
 
     def get_compromiso_participacion(self):
-        participacion_remote_id = settings.PARTICIPACION_PROPOSAL_REMOTE_ID
-        return self.commitments.filter(proposal__remote_id=participacion_remote_id).exists()
+        return self.commitments.\
+            filter(proposal__remote_id=settings.PARTICIPACION_PROPOSAL_REMOTE_ID).exists()
 
     def get_compromiso_gep(self):
-        gep_proposal_remote_id = settings.GEP_PROPOSAL_REMOTE_ID
-        return self.commitments.filter(proposal__remote_id=gep_proposal_remote_id).exists()
+        return self.commitments.\
+            filter(proposal__remote_id=settings.GEP_PROPOSAL_REMOTE_ID).exists()
+
+    def se_ha_comprometido(self):
+        return any([self.get_compromiso_gep(),
+                    self.get_compromiso_participacion()])
 
 class GetSortedCandidatesMixin():
     def get_sorted_candidates(self):
