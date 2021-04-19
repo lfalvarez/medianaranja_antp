@@ -1,15 +1,10 @@
 pytz==2020.5  # https://github.com/stub42/pytz
 python-slugify==4.0.1  # https://github.com/un33k/python-slugify
-Pillow==8.1.0  # https://github.com/python-pillow/Pillow
 argon2-cffi==20.1.0  # https://github.com/hynek/argon2_cffi
-redis==3.5.3  # https://github.com/andymccurdy/redis-py
-hiredis==1.1.0  # https://github.com/redis/hiredis-py
 -e git://github.com/lfalvarez/proposals-core.git#egg=dj_proposals_candidates
-python_graphql_client
 django-ndarray==0.0.3
 django-autoslug
 zappa
-python-graphql-client
 django-s3-storage==0.13.4
 
 
@@ -19,11 +14,9 @@ django==3  # pyup: < 3.1  # https://www.djangoproject.com/
 django-environ==0.4.5  # https://github.com/joke2k/django-environ
 django-model-utils==4.1.1  # https://github.com/jazzband/django-model-utils
 django-allauth==0.44.0  # https://github.com/pennersr/django-allauth
-django-crispy-forms==1.10.0  # https://github.com/django-crispy-forms/django-crispy-forms
 jedi==0.17.2
 
 gunicorn==20.0.4  # https://github.com/benoitc/gunicorn
-psycopg2==2.8.6  # https://github.com/psycopg/psycopg2
 Collectfast==2.2.0  # https://github.com/antonagestam/collectfast
 
 django-s3-sqlite
