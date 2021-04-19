@@ -42,6 +42,7 @@ jobs:
     - name: Zappa Deploy
       run: |
         echo 'deployando'
-        ls -alth
         pipenv run zappa update --all
+        echo 'subiendo statics'
         pipenv run zappa manage dev "collectstatic --noinput"
+        echo 'Terminé'
