@@ -41,8 +41,7 @@ jobs:
         aws-region: sa-east-1
     - name: Zappa Deploy
       run: |
-        echo 'deployando'
         pipenv run zappa update --all
-        echo 'subiendo statics'
+    - name: subiendo statics
+      run: |
         pipenv run zappa manage dev "collectstatic --noinput"
-        echo 'Terminé'
