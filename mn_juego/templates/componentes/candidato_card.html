@@ -2,7 +2,7 @@
 {% load static %}
 <!--Candidato Card -->
 <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 candidatos">
-    <div class="card-candidato" data-toggle="modal" data-target="#perfil-candidato-1">
+    <div class="card-candidato" data-toggle="modal" data-target="#perfil-candidato-{{candidatura.id}}">
         {% if candidatura.candidatura.partido %}
         <p>{{candidatura.candidatura.partido}}</p>
         {% endif %}
@@ -20,7 +20,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="perfil-candidato-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="perfil-candidato-{{candidatura.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
