@@ -140,7 +140,7 @@ header nav .nav-form ul li.nav-item {
 }
 
 header nav .nav-form ul form:before {
-    content: url('./imagenes/search-icono.svg');
+    content: url('https://antp-assets.s3-sa-east-1.amazonaws.com/imagenes/search-icono.svg');
     position: absolute;
     zoom: 0.65;
     padding-left: 13px;
@@ -218,7 +218,7 @@ header nav .v-desktop ul li a.active {
 /*HOME - Portada*/
 
 .portada {
-    background-image: url('./imagenes/bg-portada-home.jpg');
+    background-image: url('https://antp-assets.s3-sa-east-1.amazonaws.com/imagenes/bg-portada-home.jpg');
     background-attachment: fixed;
     background-size: cover;
     height: 768px;
@@ -328,7 +328,7 @@ a.boton-antp:hover {
 }
 
 .busqueda-comuna {
-    background-image: url('./imagenes/textura-muro.jpg');
+    background-image: url('https://antp-assets.s3-sa-east-1.amazonaws.com/imagenes/textura-muro.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
@@ -340,7 +340,7 @@ a.boton-antp:hover {
 }
 
 .busqueda-comuna .form-comunas:before {
-    content: url('./imagenes/mapa.svg');
+    content: url('https://antp-assets.s3-sa-east-1.amazonaws.com/imagenes/mapa.svg');
     position: absolute;
     left: -45%;
     top: -30%;
@@ -643,7 +643,7 @@ footer .rrss {
 /*Resultado Busqueda Distrito*/
 
 .banner-mapa-distrito {
-    background: url('./imagenes/mapa-textura.svg');
+    background: url('https://antp-assets.s3-sa-east-1.amazonaws.com/imagenes/mapa-textura.svg');
     background-size: cover;
     background-position: center;
     padding-top: 140px;
@@ -673,7 +673,7 @@ footer .rrss {
 }
 
 .banner-mapa-distrito .info:before {
-    content: url('./imagenes/map-icono.svg');
+    content: url('https://antp-assets.s3-sa-east-1.amazonaws.com/imagenes/map-icono.svg');
     position: absolute;
     zoom: 1;
     top: 18px;
@@ -768,7 +768,7 @@ section.container.compromisos {
 }
 
 .compromisos .compromiso.pink h3:before {
-    content: url('./imagenes/estrella-rosa.svg');
+    content: url('https://antp-assets.s3-sa-east-1.amazonaws.com/imagenes/estrella-rosa.svg');
     zoom: 0.25;
     padding-right: 30px;
 }
@@ -786,7 +786,7 @@ section.container.compromisos {
 }
 
 .compromisos .compromiso.blue h3:before {
-    content: url('./imagenes/estrella-azul.svg');
+    content: url('https://antp-assets.s3-sa-east-1.amazonaws.com/imagenes/estrella-azul.svg');
     zoom: 0.25;
     padding-right: 30px;
 }
@@ -835,7 +835,7 @@ section.container.compromisos {
 }
 
 .datos-porcentajes .item-porcentaje:first-child::after {
-    content: url('./imagenes/granillo-celeste.svg');
+    content: url('https://antp-assets.s3-sa-east-1.amazonaws.com/imagenes/granillo-celeste.svg');
     position: absolute;
     width: 100%;
     zoom: 0.7;
@@ -843,7 +843,7 @@ section.container.compromisos {
 }
 
 .datos-porcentajes .item-porcentaje:last-child::after {
-    content: url('./imagenes/granillo-amarillo.svg');
+    content: url('https://antp-assets.s3-sa-east-1.amazonaws.com/imagenes/granillo-amarillo.svg');
     position: absolute;
     width: 100%;
     zoom: 0.7;
@@ -863,7 +863,7 @@ section.container.compromisos {
 }
 
 .candidatos .card-candidato {
-    background-image: url('./imagenes/textura-muro.jpg');
+    background-image: url('https://antp-assets.s3-sa-east-1.amazonaws.com/imagenes/textura-muro.jpg');
     background-size: 700%;
     padding: 20% 10%;
     display: flex;
@@ -884,7 +884,7 @@ section.container.compromisos {
 }
 
 .candidatos .card-candidato:after {
-    content: url('./imagenes/parche-decoracion-candidato.png');
+    content: url('https://antp-assets.s3-sa-east-1.amazonaws.com/imagenes/parche-decoracion-candidato.png');
     position: absolute;
     right: 0px;
     top: -10px;
@@ -1006,7 +1006,7 @@ section.container.compromisos {
 /*PUEBLOS ORIGINARIOS REGIÓN DISTRITOS*/
 
 .candidatos-pueblos-contenedor {
-    background: url('./imagenes/bg-blue-granillo.jpg');
+    background: url('https://antp-assets.s3-sa-east-1.amazonaws.com/imagenes/bg-blue-granillo.jpg');
     background-size: cover;
     padding-top: 140px;
     padding-bottom: 140px;
@@ -1075,7 +1075,7 @@ section.container.compromisos {
 }
 
 .candidatos-pueblos-contenedor .card-candidato:after {
-    content: url('./imagenes/parche-decoracion-candidato.png');
+    content: url('https://antp-assets.s3-sa-east-1.amazonaws.com/imagenes/parche-decoracion-candidato.png');
     position: absolute;
     right: 0px;
     top: -10px;
@@ -1161,7 +1161,7 @@ section.container.compromisos {
 .comunas-distrito .comuna-activa h3 {
     text-align: center;
     width: auto;
-    background: url('./imagenes/textura-fondo-nombre-distrito.svg');
+    background: url('https://antp-assets.s3-sa-east-1.amazonaws.com/imagenes/textura-fondo-nombre-distrito.svg');
     background-repeat: no-repeat;
     background-size: contain;
     padding: 20px;
@@ -1174,7 +1174,7 @@ section.container.compromisos {
 }
 
 .comunas-distrito .comuna-activa h3:before {
-    content: url('./imagenes/localizador-map-amarillo.svg');
+    content: url('https://antp-assets.s3-sa-east-1.amazonaws.com/imagenes/localizador-map-amarillo.svg');
     zoom: 0.8;
     padding-top: 2px !important;
     padding-right: 10px;
@@ -1407,7 +1407,7 @@ section.container.compromisos {
 .banner-pueblos-originarios {
     margin-top: 176px;
     width: 100%;
-    background: url('./imagenes/background-textura-pueblos.png') !important;
+    background: url('https://antp-assets.s3-sa-east-1.amazonaws.com/imagenes/background-textura-pueblos.png') !important;
     height: 250px;
     background-size: cover;
     background-position: center;
@@ -1424,7 +1424,7 @@ section.container.compromisos {
 }
 
 .banner-pueblos-originarios .info:before {
-    content: url('./imagenes/icono-pueblo-originario.svg');
+    content: url('https://antp-assets.s3-sa-east-1.amazonaws.com/imagenes/icono-pueblo-originario.svg');
     position: absolute;
     zoom: 0.8;
     top: 18px;
@@ -1511,7 +1511,7 @@ section.container.compromisos {
 }
 
 .contenedor-candidatos:before {
-    content: url('./imagenes/mapa.svg');
+    content: url('https://antp-assets.s3-sa-east-1.amazonaws.com/imagenes/mapa.svg');
     position: absolute;
     left: -40%;
     zoom: 0.8;
