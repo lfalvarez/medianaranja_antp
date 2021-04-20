@@ -37,22 +37,7 @@
 </div>
 
 
-<section class="candidatos-pueblos-contenedor container-fluid">
-    <div class="container">
-        {% for pueblo_originario in distrito.region.pueblos_originarios.all %}
-        <div class="row justify-content-md-center">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                <h2>Estas son las candidaturas del Pueblo <br><span>{{pueblo_originario}}</span> en las elecciones de Convención Constituyente</h2>
-            </div>
-            {% for candidatura in pueblo_originario.candidates.all %}
-            {% include 'componentes/candidato_card.html' with candidatura=candidatura %}
-            {% endfor %}
 
-        </div>
-        {% endfor %}
-
-    </div>
-</section>
 
 <div class="textura-post-pueblos">
     <img src="{% static 'imagenes/textura-decoracion-postbanner.svg' %}" alt="textura">
