@@ -2,13 +2,13 @@
 
 <script>
         var src_{{input_id}} = {
-      {% for comuna in object_list %}"{{comuna.name}}": "{{comuna.slug}}",{% endfor %}
+      {% for o in object_list %}"{{o.name}}": "{{o.slug}}",{% endfor %}
     }
 
     function onSelectItem_{{input_id}}(item) {
 
       let slug = item.value;
-      $(location).attr('href', 'comuna/'+slug + "{{post_fix}}")
+      $(location).attr('href', '{{pre_fix}}/'+slug)
     }
     $( document ).ready(function() {
         $('#{{input_id}}').autocomplete({

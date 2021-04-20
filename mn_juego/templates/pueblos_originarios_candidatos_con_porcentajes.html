@@ -1,0 +1,33 @@
+{% load medianaranja_extras %}
+{% load static %}
+<section class="candidatos container-fluid">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <h2>{{distrito}}</h2>
+            </div>
+
+            {% for candidatura in distrito.candidates.all %}
+                {% include 'componentes/candidato_card.html' with candidatura=candidatura %}
+            {% endfor %}
+
+
+
+
+            <!--div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <nav aria-label="nav-paginacion">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    </ul>
+                </nav>
+            </div-->
+
+        </div>
+    </div>
+</section>
+
+<div class="textura-prev-pueblos">
+    <img src="{% static 'imagenes/textura-decoracion-postbanner.svg' %}" alt="textura">
+</div>
