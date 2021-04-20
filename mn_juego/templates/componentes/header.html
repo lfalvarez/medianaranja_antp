@@ -1,14 +1,16 @@
 {% load static %}
-
+{% block extrajstop %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-4-autocomplete/dist/bootstrap-4-autocomplete.min.js" crossorigin="anonymous">
+</script>
+{% endblock extrajstop %}
 <header>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="nav-form container my-2">
             <a class="navbar-brand" href="/"><img src="{% static 'imagenes/logo-antp.png' %}" alt="My image"></a>
             <ul class="navbar-nav">
-                <form class="form-inline">
-                    <input action="https://ahoranostocaparticipar.cl/search?" method="get" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-                    <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
-                </form>
+              <div id="parent" class="form-group">
+                  {% include 'componentes/buscador_comunas.html' with object_list=object_list input_id='myAutocomplete' pre_fix="comuna" %}
+              </div>
                 <li class="nav-item">
                     <a class="nav-link" href="https://ahoranostocaparticipar.cl/users/sign_up">Registrate</a>
                 </li>
