@@ -37,8 +37,10 @@
 
           <div id="parent" class="form-group">
                <label for="myAutocomplete">Escribe <b>la comuna</b> en que votas:</label>
-               <!--img src="{% static 'imagenes/map-icono.svg" alt="mapa-icono' %}" class="icono-mapa"-->
+
+               <img src="{% static 'imagenes/map-icono.svg' %}" alt="mapa-icono" class="icono-mapa">
               {% include 'componentes/buscador_comunas.html' with object_list=object_list input_id='myAutocomplete' pre_fix="comuna" %}
+
             </div>
 
       </div>
@@ -73,7 +75,7 @@
             <div id="parent" class="form-group">
                 <label for="buscador_pueblos_originarios">Escribe el nombre del <b>Pueblo Originario</b> para consultar:</label>
                 {% include 'componentes/buscador_comunas.html' with object_list=pueblos_originarios input_id='buscador_pueblos_originarios' pre_fix="pueblos_originarios"%}
-                <!--a class="boton-antp" type="submit" href="http://localhost:8000/static/busqueda-pueblos-originarios.html">Ver Candidaturas</a-->
+                
             </div>
         </div>
     </div>
