@@ -1,13 +1,18 @@
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.base import RedirectView
-from mn_juego.models import Comuna, Distrito
+from mn_juego.models import Comuna, Distrito, PuebloOriginario
 from django.urls import reverse_lazy
 
 
 class IndexView(ListView):
     model = Comuna
     template_name = 'index.html'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data()
+        context['pueblos_originarios'] = PuebloOriginario.objects.all()
+        return context
 
 class DistritoView(RedirectView):
     permanent = False
@@ -35,3 +40,8 @@ class ComunaView(DetailView):
         context = super().get_context_data()
         context['comuna'] = self.comuna_being_asked
         return context
+
+
+class PuebloOriginarioDetailView(DetailView):
+    model = PuebloOriginario
+    template_name = 'resultado_pueblos_originarios.html'

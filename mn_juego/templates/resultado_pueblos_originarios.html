@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="banner-mapa-distrito banner-pueblos-originarios">
+     <div class="info">
+         <h1 class="distrito">{{object}}</h1>
+         <p class="region">Escaños Reservados</p>
+    </div>
+</div>
+
+<div class="textura-post-banner">
+    <img src="{% static 'imagenes/textura-decoracion-postbanner.svg' %}" alt="textura">
+</div>
+
+<section class="container compromisos">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 info-compromisos">
+            <h2><b>Compromisos #ParticipamosTodxs: </b><br>Por una participación ciudadana inclusiva</h2>
+            <p>Porque en este proceso constituyente <b>#ParticipamosTodxs</b>, les pedimos a las candidaturas que adhieran a los siguientes compromisos, para impulsar una participación ciudadana inclusiva durante el trabajo de la Convención Constitucional.</p>
+            <div class="compromiso pink">
+                <h3>Compromiso por la inclusión de grupos con mayor vulneración de derechos.</h3>
+                <p>Trabajados desde Manual <a href="https://drive.google.com/file/d/1draruC0R7CZJLc6CWE0DZ_mcRul9As36/view" target="_blank">“Miradas para la inclusión”</a>.</p>
+                <a class="boton-antp" href="https://drive.google.com/file/d/1VryC-gYx0q00pHqRgSUwJv_pf0cy-teW/view" target="_blank">Revisa el compromiso</a>
+            </div>
+            <div class="compromiso blue">
+                <h3>Compromiso por la participación en el proceso constituyente.</h3>
+                <p>Impulsado desde <a href="https://www.redparalaparticipacion.cl/" target="_blank">la Red para la Participación.</a></p>
+                <a class="boton-antp" href="https://drive.google.com/file/d/1tqaSC44PvhniTe7GDv7Sg-SmXwhaFzIj/view" target="_blank">Revisa el compromiso</a>
+            </div>
+        </div>
+
+        <!--div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 datos-porcentajes">
+            <div class="item-porcentaje">
+                <h4>Participación electoral de la comuna en el<span>Plebiscito 25-O</span></h4>
+                <p class="porcentaje">42.78%</p>
+            </div>
+            <<div class="item-porcentaje">
+                <h4>Participación <span>Nivel Comunal</span> en la última elección</h4>
+                <p class="porcentaje">42.78%</p>
+            </div>>
+            <div class="item-porcentaje boton-locales-votacion">
+                <a class="boton-antp" href="#"><img src="../static/imagenes/map-icono-white.svg" alt="mapa-icono" class="icono-mapa" width="25px;">Busca tu local de votación</a>
+            </div>
+        </div-->
+    </div>
+</section>
+
+
+
+
+<!--{% include 'propuestas_con_candidatos_dentro.html' with distrito=distrito %} -->
+
+{% include 'pueblos_originarios_candidatos_con_porcentajes.html' with distrito=object %}
+{% endblock content %}
