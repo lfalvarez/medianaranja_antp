@@ -1,5 +1,5 @@
 <input type="text" id="{{input_id}}" class="form-control" />
-
+<!--a class="boton-antp" type="submit" onclick="onClick_{{input_id}}">Revisar</a-->
 <script>
         var src_{{input_id}} = {
       {% for o in object_list %}"{{o.name}}": "{{o.slug}}",{% endfor %}
@@ -10,6 +10,11 @@
       let slug = item.value;
       $(location).attr('href', '{{pre_fix}}/'+slug)
     }
+    function onClick_{{input_id}}(event){
+        console.log("perrito");
+        console.log(event);
+        event.preventDefault();
+    };
     $( document ).ready(function() {
         $('#{{input_id}}').autocomplete({
           source: src_{{input_id}},

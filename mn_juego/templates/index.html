@@ -36,11 +36,9 @@
           <p>Encuentra las <b>candidaturas comprometidas</b> por una participación ciudadana inclusiva.</p>
 
           <div id="parent" class="form-group">
-               <label for="myAutocomplete">Selecciona <b>la comuna</b> en que votas:</label>
+               <label for="myAutocomplete">Escribe <b>la comuna</b> en que votas:</label>
                <!--img src="{% static 'imagenes/map-icono.svg" alt="mapa-icono' %}" class="icono-mapa"-->
               {% include 'componentes/buscador_comunas.html' with object_list=object_list input_id='myAutocomplete' pre_fix="comuna" %}
-
-                <!--a class="boton-antp" type="submit">Revisar Comuna</a-->
             </div>
 
       </div>
@@ -73,7 +71,7 @@
         <div class="col-12 col-sm-12 col-md-5 offset-md-5 col-lg-4 offset-lg-5 col-xl-4 offset-xl-5 form-comunas">
             <h2> Conoce cuáles son las candidaturas de <span>pueblos originarios</span> para la Convención</h2>
             <div id="parent" class="form-group">
-                <label for="buscador_pueblos_originarios">Escribe el <b>Pueblo Originario</b> para consultar:</label>
+                <label for="buscador_pueblos_originarios">Escribe el nombre del <b>Pueblo Originario</b> para consultar:</label>
                 {% include 'componentes/buscador_comunas.html' with object_list=pueblos_originarios input_id='buscador_pueblos_originarios' pre_fix="pueblos_originarios"%}
                 <!--a class="boton-antp" type="submit" href="http://localhost:8000/static/busqueda-pueblos-originarios.html">Ver Candidaturas</a-->
             </div>
