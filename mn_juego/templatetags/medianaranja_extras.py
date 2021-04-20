@@ -20,3 +20,7 @@ def get_compromiso_gep(candidate):
 @register.simple_tag
 def se_ha_comprometido(candidate):
     return candidate.candidatura.se_ha_comprometido()
+
+@register.simple_tag
+def esta_vacio_de_compromisos(distrito):
+    return distrito.esta_vacio_de_compromisos()
