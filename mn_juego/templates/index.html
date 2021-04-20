@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load medianaranja_extras %}
 {% block extrajstop %}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-4-autocomplete/dist/bootstrap-4-autocomplete.min.js" crossorigin="anonymous">
 </script>
@@ -39,7 +40,7 @@
                <label for="myAutocomplete">Escribe <b>la comuna</b> en que votas:</label>
 
                <img src="{% static 'imagenes/map-icono.svg' %}" alt="mapa-icono" class="icono-mapa">
-              {% include 'componentes/buscador_comunas.html' with object_list=object_list input_id='myAutocomplete' pre_fix="comuna" %}
+              {% buscador_comunas input_id='myAutocomplete' pre_fix="comuna" %}
 
             </div>
 
@@ -74,8 +75,7 @@
             <h2> Conoce cuáles son las candidaturas de <span>pueblos originarios</span> para la Convención</h2>
             <div id="parent" class="form-group">
                 <label for="buscador_pueblos_originarios">Escribe el nombre del <b>Pueblo Originario</b> para consultar:</label>
-                {% include 'componentes/buscador_comunas.html' with object_list=pueblos_originarios input_id='buscador_pueblos_originarios' pre_fix="pueblos_originarios"%}
-
+                {% buscador_pueblos_originarios input_id='buscador_pueblos_originarios' pre_fix="pueblos_originarios"%}
             </div>
         </div>
     </div>
