@@ -43,5 +43,9 @@ jobs:
       run: |
         pipenv run zappa update --all
     - name: subiendo statics
+      continue-on-error: true
       run: |
         pipenv run zappa manage dev "collectstatic --noinput"
+    - name: actualizando la base de datos
+      run: |
+        aws s3 cp sqlite.db s3://medianaranja-antp
