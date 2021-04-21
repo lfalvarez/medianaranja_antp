@@ -63,6 +63,8 @@ class GetSortedCandidatesMixin():
 
 class Distrito(Territory, GetSortedCandidatesMixin):
     region = models.ForeignKey(Territory, related_name='distritos', on_delete=models.CASCADE)
+    link_compromiso_inclusion = models.URLField(default='https://ahoranostocaparticipar.cl/processes/espaciocompromisos/f/128/proposals/8')
+    link_compromiso_participacion = models.URLField(default='https://ahoranostocaparticipar.cl/processes/espaciocompromisos/f/128/proposals/7')
 
     def esta_vacio_de_compromisos(self):
         return not Commitment.objects.filter(proposal__territory=self).exists()
