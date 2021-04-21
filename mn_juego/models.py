@@ -64,6 +64,9 @@ class GetSortedCandidatesMixin():
 class Distrito(Territory, GetSortedCandidatesMixin):
     region = models.ForeignKey(Territory, related_name='distritos', on_delete=models.CASCADE)
 
+    def esta_vacio_de_compromisos(self):
+        return not Commitment.objects.filter(proposal__territory=self).exists()
+
 
 class PuebloOriginario(Territory, GetSortedCandidatesMixin):
     regiones = models.ManyToManyField(Territory,
