@@ -67,7 +67,7 @@ class Distrito(Territory, GetSortedCandidatesMixin):
     link_compromiso_participacion = models.URLField(default='https://ahoranostocaparticipar.cl/processes/espaciocompromisos/f/128/proposals/7')
 
     def esta_vacio_de_compromisos(self):
-        return not Commitment.objects.filter(proposal__territory=self).exists()
+        return not Commitment.objects.filter(candidate__in=self.candidates.all()).exists()
 
 
 class PuebloOriginario(Territory, GetSortedCandidatesMixin):
