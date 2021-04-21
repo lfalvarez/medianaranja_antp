@@ -5,6 +5,7 @@
         "runtime": "python3.8",
         "s3_bucket": "medianaranja-antp",
         "aws_region": "sa-east-1",
+        "keep_warm": true,
         "use_precompiled_packages": true,
         "slim_handler": true,
         "exclude": ["*.gz", "*.rar", "*.csv", "*.db", "mn_juego/static/"]
