@@ -26,11 +26,13 @@ def esta_vacio_de_compromisos(distrito):
     return distrito.esta_vacio_de_compromisos()
 
 @register.inclusion_tag('componentes/buscador_comunas.html')
-def buscador_comunas(input_id, pre_fix):
+def buscador_comunas(**kwargs):
     object_list = Comuna.objects.all()
-    return {'object_list': object_list, 'input_id': input_id, 'pre_fix': pre_fix}
+    return {'object_list': object_list,
+            **kwargs}
 
 @register.inclusion_tag('componentes/buscador_comunas.html')
-def buscador_pueblos_originarios(input_id, pre_fix):
+def buscador_pueblos_originarios(**kwargs):
     object_list = PuebloOriginario.objects.all()
-    return {'object_list': object_list, 'input_id': input_id, 'pre_fix': pre_fix}
+    return {'object_list': object_list,
+            **kwargs}

@@ -40,7 +40,7 @@
                <label for="myAutocomplete">Escribe <b>la comuna</b> en que votas:</label>
 
                <img src="{% static 'imagenes/map-icono.svg' %}" alt="mapa-icono" class="icono-mapa">
-              {% buscador_comunas input_id='myAutocomplete' pre_fix="comuna" %}
+              {% buscador_comunas input_id='myAutocomplete' pre_fix="comuna" placeholder='Escribe tu comuna' %}
 
             </div>
 
@@ -75,7 +75,7 @@
             <h2> Conoce cuáles son las candidaturas de <span>pueblos originarios</span> para la Convención</h2>
             <div id="parent" class="form-group">
                 <label for="buscador_pueblos_originarios">Escribe el nombre del <b>Pueblo Originario</b> para consultar:</label>
-                {% buscador_pueblos_originarios input_id='buscador_pueblos_originarios' pre_fix="pueblos_originarios"%}
+                {% buscador_pueblos_originarios input_id='buscador_pueblos_originarios' pre_fix="pueblos_originarios" placeholder='Escribe el pueblo originario' %}
             </div>
         </div>
     </div>
