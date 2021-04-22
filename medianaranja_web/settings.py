@@ -146,17 +146,23 @@ BALDINHO = "antp-assets"
 
 # STATICFILES_STORAGE = "django_s3_storage.storage.StaticS3Storage"
 
-if not IS_OFFLINE:
-    STATICFILES_STORAGE = "django_s3_storage.storage.StaticS3Storage"
+
+
+
 
 AWS_S3_BUCKET_NAME_STATIC = BALDINHO
 
 # These next two lines will serve the static files directly
 # from the s3 bucket
 DOMINIO_PERSONALIZADO = '%s.s3.amazonaws.com' % BALDINHO
-STATIC_URL = "https://%s/" % DOMINIO_PERSONALIZADO
 AWS_DEFAULT_ACL = None
 
+if not IS_OFFLINE:
+    STATICFILES_STORAGE = "django_s3_storage.storage.StaticS3Storage"
+    STATIC_URL = "https://%s/" % DOMINIO_PERSONALIZADO
+else:
+    STATIC_URL = '/static/'
+    STATIC_ROOT = BASE_DIR
 
 # Ids de cosas para hacerle_referencia
 GEP_PROPOSAL_REMOTE_ID = 8  # El id que tiene la propuesta GEP en decidim
