@@ -220,7 +220,7 @@ header nav .v-desktop ul li a.active {
 .portada {
     background-image: url('https://antp-assets.s3-sa-east-1.amazonaws.com/imagenes/bg-portada-home.jpg');
     background-attachment: fixed;
-    background-size: cover;
+    /*background-size: cover;*/
     height: 768px;
     width: 100%;
     position: relative;
