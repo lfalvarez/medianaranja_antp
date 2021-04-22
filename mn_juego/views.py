@@ -1,6 +1,8 @@
+from django.utils.decorators import method_decorator
+from django.views.decorators.clickjacking import xframe_options_exempt
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.base import RedirectView
+from django.views.generic.base import RedirectView, TemplateView
 from mn_juego.models import Comuna, Distrito, PuebloOriginario
 from django.urls import reverse_lazy
 
@@ -20,9 +22,11 @@ class DistritoView(RedirectView):
                             kwargs={'slug': distrito_slug}
                             )
 
+
 class DistritoBySlug(DetailView):
     model = Distrito
     template_name = 'resultado.html'
+
 
 class ComunaView(DetailView):
     model = Distrito
@@ -41,3 +45,11 @@ class ComunaView(DetailView):
 class PuebloOriginarioDetailView(DetailView):
     model = PuebloOriginario
     template_name = 'resultado_pueblos_originarios.html'
+
+
+class EmbedSearcherView(TemplateView):
+    template_name = "embed.html"
+
+    @method_decorator(xframe_options_exempt)
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)

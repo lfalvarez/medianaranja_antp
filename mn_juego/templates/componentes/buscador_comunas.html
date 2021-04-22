@@ -8,7 +8,9 @@
     function onSelectItem_{{input_id}}(item) {
 
       let slug = item.value;
-      $(location).attr('href', '/{{pre_fix}}/'+slug)
+      let url = '{{pre_fix}}/'+slug;
+
+      $(location).attr('href', url)
     }
     function onClick_{{input_id}}(event){
         console.log(event);

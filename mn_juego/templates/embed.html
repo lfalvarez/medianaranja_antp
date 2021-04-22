@@ -1,0 +1,15 @@
+{% extends 'base_embed.html' %}
+{% load medianaranja_extras %}
+
+{% block embed_body %}
+
+<div class="row form-contenidos">
+        <div class="col-12 col-sm-12 col-md-5 offset-md-5 col-lg-4 offset-lg-5 col-xl-4 offset-xl-5 form-comunas">
+            <h1>Participamos <span>Todxs</span></h1>
+            <div id="parent" class="form-group">
+                <label for="myAutocomplete">Escribe <b>la comuna</b> en que votas:</label>
+                {% buscador_comunas input_id='myAutocomplete' pre_fix="https://participamostodxs.ahoranostocaparticipar.cl/comuna" placeholder='Escribe tu comuna' full_path=True %}
+            </div>
+        </div>
+    </div>
+{% endblock embed_body %}

@@ -4,7 +4,7 @@ from mn_juego.views import (IndexView,
                             DistritoView,
                             DistritoBySlug,
                             ComunaView,
-                            PuebloOriginarioDetailView)
+                            PuebloOriginarioDetailView, EmbedSearcherView)
 
 
 app_name = 'mn_juego'
@@ -15,4 +15,5 @@ urlpatterns = [
     path('<slug:slug>', DistritoBySlug.as_view(), name='distrito_detail_by_distrito_slug'),
     path('comuna/<slug:slug>', ComunaView.as_view(), name='comuna_detail'),
     path('pueblos_originarios/<slug:slug>', PuebloOriginarioDetailView.as_view(), name='pueblo_originario_detail'),
+    path('busca_comunas/', EmbedSearcherView.as_view(), name='embed_searcher')
 ]
