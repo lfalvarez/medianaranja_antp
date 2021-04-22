@@ -10,7 +10,8 @@
       let slug = item.value;
       let url = '{{pre_fix}}/'+slug;
 
-      $(location).attr('href', url)
+      window.open(url, '_parent');
+
     }
     function onClick_{{input_id}}(event){
         console.log(event);
