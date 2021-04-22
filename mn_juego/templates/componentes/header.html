@@ -1,17 +1,29 @@
-{% load static %}
-{% load medianaranja_extras %}
-{% block extrajstop %}
+{% load static %} {% load medianaranja_extras %} {% block extrajstop %}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-4-autocomplete/dist/bootstrap-4-autocomplete.min.js" crossorigin="anonymous">
+
+
 </script>
 {% endblock extrajstop %}
+
 <header>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="mensaje-header">
+            <div class="container">
+                <div class="mensaje">
+                    <p>Si eres candidato/a a la Convención Constitucional, te invitamos a sumarte #ParticipamosTodxs y firmar nuestros compromisos por la participación e inclusión.</p>
+                </div>
+                <div class="boton">
+                    <a class="boton-antp" href="https://ahoranostocaparticipar.cl/processes/espaciocompromisos" target="_blank">Conoce los compromisos</a>
+                </div>
+            </div>
+        </div>
+
         <div class="nav-form container my-2">
-            <a class="navbar-brand" href="/"><img src="{% static 'imagenes/logo-antp.png' %}" alt="AhoraNosTocaParticipar"></a>
+            <a class="navbar-brand" href="/"><img src="{% static 'imagenes/logo-antp.png' %}" alt="My image"></a>
             <ul class="navbar-nav">
-              <div id="parent" class="form-group">
-                  {% buscador_comunas input_id='header_comunas' pre_fix="/comuna" placeholder='Escribe tu comuna' %}
-              </div>
+                <div id="parent" class="form-group">
+                    {% buscador_comunas input_id='header_comunas' pre_fix="comuna" placeholder='Escribe tu comuna' %}
+                </div>
                 <li class="nav-item">
                     <a class="nav-link" href="https://ahoranostocaparticipar.cl/users/sign_up">Registrate</a>
                 </li>
