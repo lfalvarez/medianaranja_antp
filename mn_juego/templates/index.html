@@ -26,7 +26,7 @@
             <h1>Participamos <span>Todxs</span></h1>
             <p class="bajada-titulo">Por un proceso constituyente donde todas las voces participen.</p> -->
 
-        <div class="col-9 offset-3 col-sm-9 offset-sm-3 col-md-10 offset-md-2 col-lg-5 offset-lg-3 col-xl-4 offset-xl-3 form-comunas">
+        <div class="col-12 col-sm-12 col-md-10 offset-md-2 col-lg-5 offset-lg-3 col-xl-4 offset-xl-3 form-comunas">
             <h1>Participamos <span>Todxs</span></h1>
             <p class="bajada-titulo">Por un proceso constituyente donde todas las voces participen.</p>
 
@@ -35,8 +35,7 @@
             <div id="parent" class="form-group">
                 <label for="myAutocomplete">Escribe <b>la comuna</b> en que votas:</label>
 
-               <img src="{% static 'imagenes/map-icono.svg' %}" alt="mapa-icono" class="icono-mapa">
-              {% buscador_comunas input_id='myAutocomplete' pre_fix="/comuna" placeholder='Escribe tu comuna' %}
+                <img src="{% static 'imagenes/map-icono.svg' %}" alt="mapa-icono" class="icono-mapa"> {% buscador_comunas input_id='myAutocomplete' pre_fix="/comuna" placeholder='Escribe tu comuna' %}
 
             </div>
 
@@ -70,8 +69,7 @@
         <div class="col-12 col-sm-12 col-md-5 offset-md-5 col-lg-4 offset-lg-5 col-xl-4 offset-xl-5 form-comunas">
             <h2> Conoce cuáles son las candidaturas de <span>pueblos originarios</span> para la Convención</h2>
             <div id="parent" class="form-group">
-                <label for="buscador_pueblos_originarios">Escribe el nombre del <b>Pueblo Originario</b> para consultar:</label>
-                {% buscador_pueblos_originarios input_id='buscador_pueblos_originarios' pre_fix="/pueblos_originarios" placeholder='Escribe el pueblo originario' %}
+                <label for="buscador_pueblos_originarios">Escribe el nombre del <b>Pueblo Originario</b> para consultar:</label> {% buscador_pueblos_originarios input_id='buscador_pueblos_originarios' pre_fix="/pueblos_originarios" placeholder='Escribe el pueblo originario' %}
             </div>
         </div>
     </div>

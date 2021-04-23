@@ -1,15 +1,18 @@
-{% load medianaranja_extras %}
-{% load static %}
+{% load medianaranja_extras %} {% load static %}
 <section class="candidatos container-fluid">
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                 <h2>{{distrito}}</h2>
+                <div class="mensaje-compromisos-candidatos">
+                    <p>Si eres candidato/a a la Convención Constitucional, te invitamos a sumarte <b>#ParticipamosTodxs</b> y firmar nuestros compromisos por la participación e inclusión.</p>
+                    <div class="boton">
+                        <a class="boton-antp" href="https://ahoranostocaparticipar.cl/processes/espaciocompromisos" target="_blank">Conoce los compromisos</a>
+                    </div>
+                </div>
             </div>
 
-            {% for candidatura in distrito.candidates.all %}
-                {% include 'componentes/candidato_card.html' with candidatura=candidatura %}
-            {% endfor %}
+            {% for candidatura in distrito.candidates.all %} {% include 'componentes/candidato_card.html' with candidatura=candidatura %} {% endfor %}
 
 
 
