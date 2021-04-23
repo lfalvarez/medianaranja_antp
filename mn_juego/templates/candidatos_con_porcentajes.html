@@ -1,19 +1,18 @@
-{% load medianaranja_extras %}
-{% load static %}
+{% load medianaranja_extras %} {% load static %}
 <section class="candidatos container-fluid">
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                 <h2>Candidaturas que han adherido en tu Distrito</h2>
-                <!--<h3>Si eres candidato/a a la Convención Constitucional, te invitamos a sumarte #ParticipamosTodxs y firmar nuestros compromisos <a href="https://ahoranostocaparticipar.cl/processes/espaciocompromisos">Conoce los Compromisos</a></h3>-->
+                <div class="mensaje-compromisos-candidatos">
+                    <p>Si eres candidato/a a la Convención Constitucional, te invitamos a sumarte <b>#ParticipamosTodxs</b> y firmar nuestros compromisos por la participación e inclusión.</p>
+                    <div class="boton">
+                        <a class="boton-antp" href="https://ahoranostocaparticipar.cl/processes/espaciocompromisos" target="_blank">Conoce los compromisos</a>
+                    </div>
+                </div>
             </div>
 
-            {% for candidatura in distrito.candidates.all %}
-                {% se_ha_comprometido candidatura as se_ha_comprometido_al_menos_con_una %}
-                {% if se_ha_comprometido_al_menos_con_una %}
-                {% include 'componentes/candidato_card.html' with candidatura=candidatura %}
-                {% endif %}
-            {% endfor %}
+            {% for candidatura in distrito.candidates.all %} {% se_ha_comprometido candidatura as se_ha_comprometido_al_menos_con_una %} {% if se_ha_comprometido_al_menos_con_una %} {% include 'componentes/candidato_card.html' with candidatura=candidatura %} {% endif %} {% endfor %}
 
 
 
@@ -35,6 +34,8 @@
 <div class="textura-prev-pueblos">
     <img src="{% static 'imagenes/textura-decoracion-postbanner.svg' %}" alt="textura">
 </div>
+
+
 
 
 

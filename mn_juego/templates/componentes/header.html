@@ -5,22 +5,22 @@
 </script>
 {% endblock extrajstop %}
 
-<header>
 
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="mensaje-header">
-            <div class="container">
-                <div class="mensaje">
-                    <p>Si eres candidato/a a la Convención Constitucional, te invitamos a sumarte #ParticipamosTodxs y firmar nuestros compromisos por la participación e inclusión.</p>
-                </div>
-                <div class="boton">
-                    <a class="boton-antp" href="https://ahoranostocaparticipar.cl/processes/espaciocompromisos" target="_blank">Conoce los compromisos</a>
-                </div>
-            </div>
+<div class="mensaje-header">
+    <div class="container">
+        <div class="mensaje">
+            <p>Si eres candidato/a a la Convención Constitucional, te invitamos a sumarte #ParticipamosTodxs y firmar nuestros compromisos por la participación e inclusión.</p>
         </div>
+        <div class="boton">
+            <a class="boton-antp" href="https://ahoranostocaparticipar.cl/processes/espaciocompromisos" target="_blank">Conoce los compromisos</a>
+        </div>
+    </div>
+</div>
 
+<header class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="nav-form container my-2">
-            <a class="navbar-brand" href="/"><img src="{% static 'imagenes/logo-antp.png' %}" alt="My image"></a>
+            <a class="navbar-brand" href="/"><img src="{% static 'imagenes/logoANTP.svg' %}" alt="My image"></a>
             <ul class="navbar-nav">
                 <div id="parent" class="form-group">
                     {% buscador_comunas input_id='header_comunas' pre_fix="comuna" placeholder='Escribe tu comuna' %}

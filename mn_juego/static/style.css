@@ -1965,10 +1965,11 @@ section.container.compromisos {
 
 
 /*Hello Bar*/
+
 .mensaje-header {
     background: #FFEB26;
     width: 100%;
-    padding: 20px 10px;
+    padding: 15px 10px;
 }
 
 .mensaje-header .container {
@@ -2016,4 +2017,87 @@ section.container.compromisos {
         width: auto;
     }
 
+}
+
+
+
+
+/*Cambios y optimizaciones 23/04/2021*/
+
+.page {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+.banner-mapa-distrito {
+    margin-top: 0px;
+}
+
+
+.portada h2.titulo-portada {
+    top: 25%;
+}
+
+.portada {
+    height: 600px;
+}
+
+.portada .boton-acla {
+    bottom: 25%;
+}
+
+
+.busqueda-comuna .form-comunas:before {
+    top: -50%;
+}
+
+
+header nav .nav-form img {
+    width: 150px;
+}
+
+footer .logo img {
+    width: 90%;
+}
+
+
+header .form-group {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+header .form-group input {
+    width: 200px;
+}
+
+section.candidatos {
+    padding-top: 70px;
+}
+
+
+.candidatos h2 {
+    margin-bottom: 10px;
+}
+
+
+.mensaje-compromisos-candidatos {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.mensaje-compromisos-candidatos p {
+    text-align: center;
+    font-size: 1.25em;
+    width: 80%;
+    line-height: normal;
+}
+
+.mensaje-compromisos-candidatos .boton {
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
