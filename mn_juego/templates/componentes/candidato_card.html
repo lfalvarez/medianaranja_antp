@@ -49,9 +49,15 @@
 
                     <div class="rrss-candidato">
                         <ul class="redes-sociales">
-                            <li><a href="#"><img src="{% static 'imagenes/twitter-icono-rosa.svg' %}" alt="icono twitter"></a></li>
-                            <li><a href="#"><img src="{% static 'imagenes/fb-icono-rosa.svg' %}" alt="icono facebook"></a></li>
-                            <li><a href="#"><img src="{% static 'imagenes/insta-icono-rosa.svg' %}" alt="icono instagram"></a></li>
+
+                            {% if candidatura.candidatura.facebook %}
+                            <li><a href="{{candidatura.candidatura.facebook}}" target="_blank"><img src="{% static 'imagenes/fb-icono-rosa.svg' %}" alt="icono facebook"></a></li>
+                            {% endif %}
+                            {% if candidatura.candidatura.instagram %}
+                            <li><a href="{{candidatura.candidatura.instagram}}" target="_blank"><img src="{% static 'imagenes/insta-icono-rosa.svg' %}" alt="icono instagram"></a></li>
+                            {% endif %}
+
+
                         </ul>
                     </div>
                     <!--<div class="sitioweb">
