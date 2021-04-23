@@ -2144,6 +2144,30 @@ section.container-fluid.mensaje-adhesion .boton a:hover {
     background: #FF297A !important;
 }
 
+.busqueda-comuna p.bajada-titulo {
+    font-size: 1.4em;
+    line-height: 16px;
+    padding-bottom: 40px;
+}
+
+.comunas-distrito .comuna-activa h3 {
+    font-size: 1.7em;
+    padding: 30px 60px;
+}
+
+
+.busqueda-pueblo-originario h2 {
+    line-height: normal;
+}
+
+.busqueda-pueblo-originario label {
+    line-height: normal;
+}
+
+.compromisos .compromiso h3 {
+    line-height: normal;
+}
+
 @media (max-width:700px) {
     .mensaje-adhesion {
         padding-top: 100px;
@@ -2151,11 +2175,62 @@ section.container-fluid.mensaje-adhesion .boton a:hover {
         background: url(imagenes/bg-blue-granillo.jpg);
         background-size: cover;
     }
+
+    .candidatos h2 {
+        margin-bottom: 15px;
+    }
+    .container {
+        width: 90%;
+        max-width: 90%;
+        min-width: 90%;
+    }
+
+    .candidatos .container {
+        width: 90%;
+        max-width: 90%;
+        min-width: 90%;
+    }
+
+    .mensaje-adhesion h3 {
+        font-size: 1.8em;
+        letter-spacing: normal;
+        margin-bottom: 15px;
+    }
+
+    .mensaje-adhesion p {
+        font-size: 1.1em;
+        line-height: normal;
+    }
+
+    .comunas-distrito h2 {
+        margin-bottom: 0px;
+    }
+    .busqueda-comuna p.bajada-titulo {
+        padding-bottom: 10px;
+        margin-bottom: 10px !important;
+        font-size: 1.1em;
+    }
 }
 
 @media (max-width:500px) {
     .busqueda-comuna .form-comunas {
-        padding-bottom: 200px !important;
+        padding-bottom: 100px !important;
+    }
+    .comunas-distrito .comuna-activa h3 {
+        font-size: 1.5em;
+        padding: 30px 40px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    a.boton-antp {
+        zoom: 0.9;
+        font-size: 0.9em;
+    }
+    .mensaje-compromisos-candidatos p {
+        text-align: center;
+        font-size: 1.2em;
+        width: 100%;
+        line-height: normal;
     }
 
 }
