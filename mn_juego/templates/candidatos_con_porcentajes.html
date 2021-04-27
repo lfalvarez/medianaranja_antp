@@ -43,13 +43,23 @@
                 <h3><b>¿No encontraste a tu <span>candidato o candidata</span>?</b></h3>
                 <p>Entonces pídeles que se comprometan por el derecho a la participación ciudadana inclusiva</p>
                 <div class="boton">
-                    <a class="boton-antp" href="https://ahoranostocaparticipar.cl/processes/espaciocompromisos" target="_blank">Conoce los compromisos</a>
+                    <a class="boton-antp"
+                       href="#"
+                       onclick="tweetCoso();return false;"
+                       target="_blank">Invita a tu candidato o candidata</a>
                 </div>
             </div>
         </div>
     </div>
 
 </section>
+
+<script>
+    function tweetCoso() {
+    var message = "Atención candidatas/os a la Convención ¡Les estamos buscando! ¿Ya se comprometieron con el derecho a la participación inclusiva? 🧐 ¡Súmate porque en esta Convención #ParticipamosTodxs! Por una #ConvenciónAbierta @ahrnostoca @RParticipacion| 😉👇 https://bit.ly/2OIBrLn";
+    window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(message), 'Tweet');
+    }
+</script>
 
 
 
