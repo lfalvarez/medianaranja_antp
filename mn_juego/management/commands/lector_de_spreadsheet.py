@@ -8,23 +8,7 @@ SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 SPREADSHEET_ID = '18f-mRM1EB4C0osJjnlgN5t0zYzPvnr74BRWt-NnQaaQ'
 
 nombres_de_las_hojas = [
-    'Escaños Reservados',
-    'RM',
-    'Arica y Parinacota',
-    'Tarapacá',
-    'Antofagasta',
-    'Atacama',
-    'Coquimbo',
-    'Valparaíso',
-    'Ohiggins ',
-    'Maule',
-    'Ñuble',
-    'Biobío',
-    'La Araucanía',
-    'Los Ríos',
-    'Los Lagos',
-    'Aysén',
-    'Magallanes'
+    'Reporte adherencia',
 ]
 
 MAPA_DE_COLUMNAS = {
