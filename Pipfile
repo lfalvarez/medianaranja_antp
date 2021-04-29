@@ -20,11 +20,12 @@ django-s3-sqlite = "*"
 whitenoise = "*"
 Django = "==3"
 Collectfast = "==2.2.0"
+
+[dev-packages]
 google-api-python-client = "*"
 google-auth-httplib2 = "*"
 google-auth-oauthlib = "*"
-
-[dev-packages]
+django-extensions = "*"
 
 [requires]
 python_version = "3.8"
