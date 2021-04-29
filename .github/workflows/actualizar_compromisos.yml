@@ -31,3 +31,10 @@ jobs:
       run: |
         echo $TOKEN >> token.json
         pipenv run python manage.py leer_spreadsheet
+    - name: Hacer un commit y subir
+      uses: EndBug/add-and-commit@v7
+      with:
+        author_name: Your Name
+        author_email: mail@example.com
+        message: 'Actualizando la BD'
+        add: 'sqlite.db'
