@@ -40,7 +40,7 @@ class Command(BaseCommand):
                     print('La candidatura de {candidate} en {distrito} está repetido'.format(candidate=nombre_candidato,
                                                                                            distrito=nombre_distrito))
                 except:
-                    print('No pillé a {candidate} del {distrito}'.format(candidate=candidate.name,
+                    print('No pillé a {candidate} del {distrito}'.format(candidate=nombre_candidato,
                                                                          distrito=nombre_distrito))
                     continue
                 self.set_compromisos(candidate, dato_candidato)
