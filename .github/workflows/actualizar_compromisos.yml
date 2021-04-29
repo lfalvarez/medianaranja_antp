@@ -36,7 +36,7 @@ jobs:
       with:
         author_name: La máquina
         author_email: maquina@ahoranostocaparticipar.org
-        message: 'Actualizando la BD'
+        message: 'Actualizando la BD ' + ${{ steps.date.outputs.date }}
         add: 'sqlite.db'
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
