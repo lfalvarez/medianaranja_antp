@@ -24,7 +24,6 @@ jobs:
       if: steps.cache-pipenv.outputs.cache-hit != 'true'
       run: |
         pipenv install
-        pipenv install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
     - name: Actualizar
       env:
         TOKEN: ${{ secrets.TOKEN }}
