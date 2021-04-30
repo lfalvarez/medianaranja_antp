@@ -28,8 +28,10 @@ jobs:
     - name: Actualizar
       env:
         TOKEN: ${{ secrets.TOKEN }}
+        CREDS: ${{ secrets.CREDS }}
       run: |
         echo $TOKEN >> token.json
+        echo $CREDS >> credentials.json
         pipenv run python manage.py leer_spreadsheet
     - name: Hacer un commit y subir
       uses: EndBug/add-and-commit@v7
