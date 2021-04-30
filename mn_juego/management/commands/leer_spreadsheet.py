@@ -49,12 +49,12 @@ class Command(BaseCommand):
         compromisos = dato_candidato['compromisos']
         comprometer_gep = False
         debo_crear_participacion = False
-        if compromisos.strip() == 'ambos':
+        if compromisos.lower().strip() == 'ambos':
             debo_crear_participacion = True
             comprometer_gep = True
-        if compromisos.strip() == 'GEP':
+        if compromisos.lower().strip() == 'gep':
             comprometer_gep = True
-        if compromisos.strip() == 'Participación':
+        if compromisos.lower().strip() == 'participación':
             debo_crear_participacion = True
         if comprometer_gep:
             ya_comprometido = Commitment.objects.filter(candidate=candidate, proposal=self.p_gep).exists()
