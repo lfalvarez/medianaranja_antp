@@ -15,4 +15,5 @@ class PropuestaAdmin(admin.ModelAdmin):
 
 @admin.register(Candidatura)
 class CandidaturaAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name', 'territory')
+    search_fields = ('name',)
