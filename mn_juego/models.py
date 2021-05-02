@@ -61,8 +61,13 @@ class GetSortedCandidatesMixin():
     def get_sorted_candidates(self):
         return sorted(self.candidates.all(), key=get_percentage, reverse=True)
 
+
+class RegionTerritory(Territory):
+    link_geo_referencia = models.URLField(max_length=1024)
+
+
 class Distrito(Territory, GetSortedCandidatesMixin):
-    region = models.ForeignKey(Territory, related_name='distritos', on_delete=models.CASCADE)
+    region_territory = models.ForeignKey(RegionTerritory, related_name='distritos_territory', on_delete=models.CASCADE, null=True)
     link_compromiso_inclusion = models.URLField(default='https://ahoranostocaparticipar.cl/processes/espaciocompromisos/f/128/proposals/8')
     link_compromiso_participacion = models.URLField(default='https://ahoranostocaparticipar.cl/processes/espaciocompromisos/f/128/proposals/7')
 

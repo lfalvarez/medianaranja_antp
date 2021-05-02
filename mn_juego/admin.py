@@ -3,7 +3,8 @@ from django.contrib import admin
 from dj_proposals_candidates.models import Commitment
 from mn_juego.models import (
     Propuesta,
-    Candidatura
+    Candidatura,
+    RegionTerritory
 )
 
 class CommitmentInline(admin.TabularInline):
@@ -17,3 +18,8 @@ class PropuestaAdmin(admin.ModelAdmin):
 class CandidaturaAdmin(admin.ModelAdmin):
     list_display = ('name', 'territory')
     search_fields = ('name',)
+
+
+@admin.register(RegionTerritory)
+class RegionTerritoryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'link_geo_referencia')
