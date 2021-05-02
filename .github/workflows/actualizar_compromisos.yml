@@ -32,7 +32,7 @@ jobs:
       run: |
         echo $TOKEN >> token.json
         echo $CREDS >> credentials.json
-        pipenv run python manage.py leer_spreadsheet
+        pipenv run python manage.py leer_spreadsheet >> resultado.txt
     - name: Hacer un commit y subir
       uses: EndBug/add-and-commit@v7
       with:
@@ -49,3 +49,16 @@ jobs:
     - name: "Subir la bd a s3"
       run: |
         aws s3 cp sqlite.db s3://medianaranja-antp
+    - name: Mandar un mail contando el resultado
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.gmail.com
+        server_port: 465
+        username: ${{secrets.MAIL_USERNAME}}
+        password: ${{secrets.MAIL_PASSWORD}}
+        subject: Resultado de la actualización de compromisos
+        to: ${{secrets.MAIL_USERNAME}}
+        from: La máquina # <user@example.com>
+        body: file://resultado.txt
+        html_body: file://resultado.txt
+        ignore_cert: true
