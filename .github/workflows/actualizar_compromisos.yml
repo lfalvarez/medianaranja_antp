@@ -32,7 +32,7 @@ jobs:
       run: |
         echo $TOKEN >> token.json
         echo $CREDS >> credentials.json
-        pipenv run python manage.py leer_spreadsheet >> resultado.txt
+        pipenv run python manage.py leer_spreadsheet
     - name: Hacer un commit y subir
       uses: EndBug/add-and-commit@v7
       with:
