@@ -7,7 +7,6 @@ from mn_juego.models import Distrito, Propuesta
 import json
 from django.core.mail import send_mail
 from django.conf import settings
-import os
 
 class Command(BaseCommand):
     help = 'leer el spreadsheet y ver qué onda'
@@ -93,7 +92,7 @@ class Command(BaseCommand):
                 'Resultado ',
                 mensaje_formateado,
                 settings.DEFAULT_FROM_EMAIL,
-                settings.A_QUIEN_SE_LE_VA_ELMAIL.split(','),
+                [m.strip() for m in settings.A_QUIEN_SE_LE_VA_ELMAIL.split(',')],
                 fail_silently=False,
             )
 
