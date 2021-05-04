@@ -168,3 +168,16 @@ else:
 GEP_PROPOSAL_REMOTE_ID = 8  # El id que tiene la propuesta GEP en decidim
 PARTICIPACION_PROPOSAL_REMOTE_ID = 7  # el id que tiene la propuesta por la participacion en decidim
 COUNTRY_ID = 1  # el id de chile, territorio al cual estaran asociadas las propuestas de arriba
+
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+#past the key or password app here
+EMAIL_HOST = os.environ['EMAIL_HOST']
+EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+DEFAULT_FROM_EMAIL = os.environ['DEFAULT_FROM_EMAIL']
+A_QUIEN_SE_LE_VA_ELMAIL = os.environ['A_QUIEN_SE_LE_VA_ELMAIL']

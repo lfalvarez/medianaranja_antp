@@ -5,8 +5,9 @@ from mn_juego.management.commands.lector_de_spreadsheet import Lector
 from dj_proposals_candidates.models import Commitment
 from mn_juego.models import Distrito, Propuesta
 import json
+from django.core.mail import send_mail
 from django.conf import settings
-
+import os
 
 class Command(BaseCommand):
     help = 'leer el spreadsheet y ver qué onda'
@@ -26,6 +27,7 @@ class Command(BaseCommand):
                candidatos_comprometidos.append(d)
         with open('data.json', 'w') as outfile:
             json.dump(candidatos_comprometidos, outfile)
+        resultado = ''
         for dato_candidato in candidatos_comprometidos:
             numero_distrito = [int(i) for i in dato_candidato['distrito'].split() if i.isdigit()]
             if numero_distrito:
@@ -37,15 +39,18 @@ class Command(BaseCommand):
                 try:
                     candidate = distrito.candidates.get(name__icontains=nombre_candidato)
                 except MultipleObjectsReturned:
-                    print('La candidatura de {candidate} en {distrito} está repetido'.format(candidate=nombre_candidato,
-                                                                                           distrito=nombre_distrito))
+                    resultado += 'La candidatura de {candidate} en {distrito} está repetido'.format(candidate=nombre_candidato,
+                                                                                           distrito=nombre_distrito)
                 except:
-                    print('No pillé a {candidate} del {distrito}'.format(candidate=nombre_candidato,
-                                                                         distrito=nombre_distrito))
+                    resultado += 'No pillé a {candidate} del {distrito}'.format(candidate=nombre_candidato,
+                                                                         distrito=nombre_distrito)
                     continue
-                self.set_compromisos(candidate, dato_candidato)
+                resultado += self.set_compromisos(candidate, dato_candidato)
+
+        self.enviar_mail(resultado)
 
     def set_compromisos(self, candidate, dato_candidato):
+        str_resultado = ''
         compromisos = dato_candidato['compromisos']
         comprometer_gep = False
         debo_crear_participacion = False
@@ -60,18 +65,37 @@ class Command(BaseCommand):
             ya_comprometido = Commitment.objects.filter(candidate=candidate, proposal=self.p_gep).exists()
             if not ya_comprometido:
                 Commitment.objects.create(candidate=candidate, proposal=self.p_gep)
-                print('Creado compromiso entre {candidate} y la propuesta por la inclusión'.format(candidate=candidate.name))
+                str_resultado += 'Creado compromiso entre {candidate} y la propuesta por la inclusión'.format(candidate=candidate.name)
         if debo_crear_participacion:
             ya_comprometido = Commitment.objects.filter(candidate=candidate, proposal=self.p_participacion).exists()
 
             if not ya_comprometido:
                 Commitment.objects.create(candidate=candidate, proposal=self.p_participacion)
-                print('Creado compromiso entre {candidate} y la propuesta por la participación'.format(candidate=candidate.name))
+                str_resultado += 'Creado compromiso entre {candidate} y la propuesta por la participación'.format(candidate=candidate.name)
         if dato_candidato['instagram']:
             candidate.instagram = dato_candidato['instagram']
         if dato_candidato['facebook']:
             candidate.facebook = dato_candidato['facebook']
         candidate.save()
+        return str_resultado
+
+    def enviar_mail(self, resultado):
+        if resultado:
+            mensaje_formateado = 'hola!\n' \
+                                 'Este es un mail automático que' \
+                                 'quiere contarte cuál fue el resultado del último procesamiento del spreadsheet\n\n' \
+                                 '{resultado}' \
+                                 '\n\n\n' \
+                                 'Besos y abrazos\n' \
+                                 '--\n' \
+                                 'La máquina'.format(resultado=resultado)
+            send_mail(
+                'Resultado ',
+                mensaje_formateado,
+                settings.DEFAULT_FROM_EMAIL,
+                settings.A_QUIEN_SE_LE_VA_ELMAIL.split(','),
+                fail_silently=False,
+            )
 
 
 
