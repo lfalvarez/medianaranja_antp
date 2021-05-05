@@ -1,5 +1,8 @@
 name: Actualizar compromisos
-on: workflow_dispatch
+on:
+  - workflow_dispatch
+  schedule:
+      - cron: "5 8-19 * * *"
 
 jobs:
   build:
