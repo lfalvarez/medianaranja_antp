@@ -1,11 +1,9 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 
 <div class="banner-mapa-distrito banner-pueblos-originarios">
-     <div class="info">
-         <h1 class="distrito">{{object}}</h1>
-         <p class="region">Escaños Reservados</p>
+    <div class="info">
+        <h1 class="distrito">{{object}}</h1>
+        <p class="region">Escaños Reservados</p>
     </div>
 </div>
 
@@ -30,19 +28,24 @@
             </div>
         </div>
 
-        <!--div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 datos-porcentajes">
-            <div class="item-porcentaje">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 datos-porcentajes">
+            <!-- <div class="item-porcentaje">
                 <h4>Participación electoral de la comuna en el<span>Plebiscito 25-O</span></h4>
                 <p class="porcentaje">42.78%</p>
             </div>
-            <<div class="item-porcentaje">
+            <div class="item-porcentaje">
                 <h4>Participación <span>Nivel Comunal</span> en la última elección</h4>
                 <p class="porcentaje">42.78%</p>
-            </div>>
+            </div>
             <div class="item-porcentaje boton-locales-votacion">
                 <a class="boton-antp" href="#"><img src="../static/imagenes/map-icono-white.svg" alt="mapa-icono" class="icono-mapa" width="25px;">Busca tu local de votación</a>
+            </div>-->
+            <div class="item-porcentaje boton-locales-votacion">
+                <h4>Elecciones <span>mayo 2021</span></h4>
+                <a class="boton-antp" href="https://ahoranostocaparticipar.cl/uploads/decidim/attachment/file/149/Kit_Informacio%CC%81n_oportuna_Elecciones_2021.pdf" target="_blank">
+                    <!--<img src="{% static 'imagenes/map-icono-white.svg' %}" alt="mapa-icono" class="icono-mapa" width="25px;">-->¡Todo lo que debes saber!</a>
             </div>
-        </div-->
+        </div>
     </div>
 </section>
 
@@ -51,5 +54,4 @@
 
 <!--{% include 'propuestas_con_candidatos_dentro.html' with distrito=distrito %} -->
 
-{% include 'pueblos_originarios_candidatos_con_porcentajes.html' with distrito=object %}
-{% endblock content %}
+{% include 'pueblos_originarios_candidatos_con_porcentajes.html' with distrito=object %} {% endblock content %}

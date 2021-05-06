@@ -2253,3 +2253,218 @@ section.container-fluid.mensaje-adhesion .boton a:hover {
     text-align: center;
     margin-top: 10px;
 }
+
+
+
+.contenidos-destacados a {
+    text-decoration: none;
+    transition: 0.5s all;
+}
+
+.contenidos-destacados a:hover {
+    box-shadow: 0px 0px 7px 0px rgb(1 1 1 / 30%);
+    -webkit-box-shadow: 0px 0px 7px 0px rgb(1 1 1 / 30%);
+    -moz-box-shadow: 0px 0px 7px 0px rgba(1, 1, 1, 0.3);
+}
+
+.contenidos-destacados a img {
+    border-radius: 20px 20px 0px 0px;
+}
+
+
+.contenidos-destacados a h4 {
+    color: black;
+    background: #dedede;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 0px 0px 20px 20px;
+    transition: 0.5s all;
+}
+
+.contenidos-destacados a:hover h4 {
+    background: white;
+    transition: 0.5s all;
+}
+
+.contenidos-destacados a h4 span {
+    color: #FF297A;
+}
+
+
+section.container-fluid.mensaje-adhesion.contenidos-destacados {
+    position: relative;
+    bottom: 220px;
+    padding-top: 100px !important;
+}
+
+.prev-contenidos-destacados {
+    bottom: 80px;
+}
+
+.busqueda-pueblo-originario .mancha-prev-footer {
+    bottom: 10px;
+}
+
+
+.textura-post-contenidos-destacados img {
+    width: 100%;
+    position: relative;
+    bottom: 300px;
+}
+
+
+.noticias-destacadas {
+    position: relative;
+    bottom: 160px;
+    padding-top: 0px;
+    padding-bottom: 50px;
+    background: transparent;
+}
+
+.noticias-destacadas a {
+    text-decoration: none;
+}
+
+.noticias-destacadas h3 {
+    text-align: center;
+    color: black;
+    font-size: 2.5em;
+    padding-bottom: 0px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.noticias-destacadas h3 span {
+    color: #FF297A;
+}
+
+.noticias-destacadas p {
+    color: black;
+}
+
+.noticias-destacadas img {
+    border-radius: 20px 20px 0px 0px;
+}
+
+.noticias-destacadas a:hover {
+    transition: 0.5s all;
+}
+
+.noticias-destacadas a h4 {
+    background: #212121;
+    min-height: 150px;
+    color: white;
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.5s all;
+}
+
+
+.noticias-destacadas a:hover h4 {
+    background: black;
+    transition: 0.5s all;
+}
+
+@media (max-width:768px) {
+    .contenidos-destacados a h4 {
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width:1238px) {
+    .prev-contenidos-destacados {
+        bottom: 90px;
+    }
+    section.container-fluid.mensaje-adhesion.contenidos-destacados {
+        bottom: 160px;
+    }
+    .textura-post-contenidos-destacados img {
+        bottom: 250px;
+    }
+
+}
+
+@media (max-width:1150px) {
+    .prev-contenidos-destacados {
+        bottom: 75px;
+    }
+    section.container-fluid.mensaje-adhesion.contenidos-destacados {
+        bottom: 150px;
+    }
+    .textura-post-contenidos-destacados img {
+        bottom: 220px;
+    }
+
+}
+
+
+@media (max-width:970px) {
+    .prev-contenidos-destacados {
+        bottom: 50px;
+    }
+    section.container-fluid.mensaje-adhesion.contenidos-destacados {
+        bottom: 130px;
+    }
+    .textura-post-contenidos-destacados img {
+        bottom: 180px;
+    }
+
+}
+
+
+@media (max-width:768px) {
+    section.container-fluid.mensaje-adhesion.contenidos-destacados {
+        bottom: 100px;
+    }
+    .busqueda-pueblo-originario .mancha-prev-footer {
+        display: none;
+    }
+    .textura-post-contenidos-destacados img {
+        bottom: 155px;
+    }
+    .noticias-destacadas {
+        bottom: 100px;
+    }
+    .noticias-destacadas h4 {
+        margin-bottom: 60px;
+    }
+}
+
+@media (max-width:700px) {
+    .textura-post-contenidos-destacados img {
+        bottom: 130px;
+    }
+}
+
+@media (max-width:530px) {
+    section.container-fluid.mensaje-adhesion.contenidos-destacados {
+        bottom: 75px;
+    }
+    .busqueda-pueblo-originario .form-comunas {
+        padding-bottom: 60px !important;
+    }
+    .textura-post-contenidos-destacados img {
+        bottom: 98px;
+    }
+    .noticias-destacadas {
+        bottom: 50px;
+    }
+}
