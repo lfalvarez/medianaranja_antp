@@ -2234,3 +2234,22 @@ section.container-fluid.mensaje-adhesion .boton a:hover {
     }
 
 }
+
+
+.datos-porcentajes .item-porcentaje {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 40px 20px;
+    margin-left: 0%;
+    border-radius: 20px;
+}
+
+
+.datos-porcentajes a.boton-antp {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
