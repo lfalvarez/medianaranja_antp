@@ -34,6 +34,7 @@ class Lista(InstitucionPoliticaBase):
 
 class Partido(InstitucionPoliticaBase):
     lista = models.ForeignKey(Lista, related_name='partidos', on_delete=models.CASCADE)
+    nombre_largo = models.CharField(max_length=255, blank=True, null=True, default=None)
 
 
 class Candidatura(Candidate):
