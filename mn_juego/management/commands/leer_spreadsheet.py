@@ -13,8 +13,8 @@ class Command(BaseCommand):
 
     def __init__(self):
         super()
-        self.p_gep = Propuesta.objects.get(remote_id=settings.PARTICIPACION_PROPOSAL_REMOTE_ID)
-        self.p_participacion = Propuesta.objects.get(remote_id=settings.GEP_PROPOSAL_REMOTE_ID)
+        self.p_gep = Propuesta.objects.get(remote_id=settings.GEP_PROPOSAL_REMOTE_ID)
+        self.p_participacion = Propuesta.objects.get(remote_id=settings.PARTICIPACION_PROPOSAL_REMOTE_ID)
 
     def handle(self, *args, **options):
 
@@ -38,10 +38,10 @@ class Command(BaseCommand):
                 try:
                     candidate = distrito.candidates.get(name__icontains=nombre_candidato)
                 except MultipleObjectsReturned:
-                    resultado += 'La candidatura de {candidate} en {distrito} está repetido'.format(candidate=nombre_candidato,
+                    resultado += 'La candidatura de {candidate} en {distrito} está repetido\n'.format(candidate=nombre_candidato,
                                                                                            distrito=nombre_distrito)
                 except:
-                    resultado += 'No pillé a {candidate} del {distrito}'.format(candidate=nombre_candidato,
+                    resultado += 'No pillé a {candidate} del {distrito}\n'.format(candidate=nombre_candidato,
                                                                          distrito=nombre_distrito)
                     continue
                 resultado += self.set_compromisos(candidate, dato_candidato)
@@ -64,13 +64,13 @@ class Command(BaseCommand):
             ya_comprometido = Commitment.objects.filter(candidate=candidate, proposal=self.p_gep).exists()
             if not ya_comprometido:
                 Commitment.objects.create(candidate=candidate, proposal=self.p_gep)
-                str_resultado += 'Creado compromiso entre {candidate} y la propuesta por la inclusión'.format(candidate=candidate.name)
+                str_resultado += 'Creado compromiso entre {candidate} y la propuesta por la inclusión\n'.format(candidate=candidate.name)
         if debo_crear_participacion:
             ya_comprometido = Commitment.objects.filter(candidate=candidate, proposal=self.p_participacion).exists()
 
             if not ya_comprometido:
                 Commitment.objects.create(candidate=candidate, proposal=self.p_participacion)
-                str_resultado += 'Creado compromiso entre {candidate} y la propuesta por la participación'.format(candidate=candidate.name)
+                str_resultado += 'Creado compromiso entre {candidate} y la propuesta por la participación\n'.format(candidate=candidate.name)
         if dato_candidato['instagram']:
             candidate.instagram = dato_candidato['instagram']
         if dato_candidato['facebook']:
