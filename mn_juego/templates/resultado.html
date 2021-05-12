@@ -23,14 +23,17 @@
                 <a class="boton-antp" href="{{distrito.link_compromiso_inclusion}}" target="_blank">Revisa el compromiso</a>
             </div>
             <div class="compromiso blue">
+                {% if distrito.slug != 'distrito-24' %}
                 <h3>
-                    {% if distrito.slug != 'distrito-24' %}
                     Compromiso por la participación en el proceso constituyente.
-                    {% else %}
-                    Decálogo por una participación activa en el proceso constituyente Elaborado por organizaciones de Los Ríos.
-                    {% endif %}
                 </h3>
                 <p>Impulsado desde <a href="https://www.redparalaparticipacion.cl/" target="_blank">la Red para la Participación.</a></p>
+                {% else %}
+                <h3>
+                    Decálogo por una participación activa en el proceso constituyente Elaborado por organizaciones de Los Ríos.
+                </h3>
+                <p>Impulsado desde <a>Impulsado por la Red para la Participación</a></p>
+                {% endif %}
                 <a class="boton-antp" href="{{distrito.link_compromiso_participacion}}" target="_blank">Revisa el compromiso</a>
             </div>
         </div>
