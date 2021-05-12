@@ -4,7 +4,11 @@
 <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 candidatos">
     <div class="card-candidato" data-toggle="modal" data-target="#perfil-candidato-{{candidatura.id}}">
         {% if candidatura.candidatura.partido %}
-        <p>{{candidatura.candidatura.partido}}</p>
+            {% if candidatura.candidatura.partido.nombre_largo %}
+                <p>{{candidatura.candidatura.partido.nombre_largo}}</p>
+            {% else %}
+                <p>{{candidatura.candidatura.partido}}</p>
+            {% endif %}
         {% endif %}
         <h5>{{candidatura}}</h5>
         <div class="compromisos-adheridos">
