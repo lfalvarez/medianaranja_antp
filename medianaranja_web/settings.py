@@ -86,21 +86,12 @@ WSGI_APPLICATION = 'medianaranja_web.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 
-if IS_OFFLINE:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': str(BASE_DIR / "sqlite.db"),
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': str(BASE_DIR / "sqlite.db"),
     }
-else:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django_s3_sqlite",
-            "NAME": "sqlite.db",
-            "BUCKET": "medianaranja-antp",
-        }
-    }
+}
 
 
 # Password validation
@@ -154,12 +145,8 @@ AWS_S3_BUCKET_NAME_STATIC = BALDINHO
 DOMINIO_PERSONALIZADO = '%s.s3.amazonaws.com' % BALDINHO
 AWS_DEFAULT_ACL = None
 
-if not IS_OFFLINE:
-    STATICFILES_STORAGE = "django_s3_storage.storage.StaticS3Storage"
-    STATIC_URL = "https://%s/" % DOMINIO_PERSONALIZADO
-else:
-    STATIC_URL = '/static/'
-    STATIC_ROOT = BASE_DIR
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR
 
 # Ids de cosas para hacerle_referencia
 GEP_PROPOSAL_REMOTE_ID = 8  # El id que tiene la propuesta GEP en decidim
