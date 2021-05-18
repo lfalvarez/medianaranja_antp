@@ -25,7 +25,6 @@ Collectfast = "==2.2.0"
 google-api-python-client = "*"
 google-auth-httplib2 = "*"
 google-auth-oauthlib = "*"
-django-extensions = "*"
 
 [requires]
 python_version = "3.8"

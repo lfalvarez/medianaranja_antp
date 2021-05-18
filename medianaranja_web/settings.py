@@ -49,9 +49,6 @@ INSTALLED_APPS = [
     'django_s3_storage',
     'mn_juego',
 ]
-if IS_OFFLINE:
-    INSTALLED_APPS += ['django_extensions']
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
