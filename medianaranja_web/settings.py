@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'medianaranja_web.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(BASE_DIR / "sqlite.db"),
+        'NAME': "sqlite.db",
     }
 }
 
